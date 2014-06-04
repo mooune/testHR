@@ -25,13 +25,7 @@
 
 
 @implementation ViewController
-{
-    AVCaptureSession *captureSession;
-    AVCaptureVideoDataOutput *_dataOutput;
 
-    double *pulse;
-
-}
 
 @synthesize pulseComp;
 @synthesize captureSession;
@@ -72,6 +66,7 @@
     [ViewController setTorchMode:AVCaptureTorchModeOn forDevice:inputDevice];
     [ViewController setFocusMode:AVCaptureFocusModeLocked forDevice:inputDevice];
     [ViewController setExposureMode:AVCaptureExposureModeLocked forDevice:inputDevice];
+    [ViewController setFrameRate:30.0 forDevice:inputDevice];
     // [ViewController setWhiteBalanceMode:AVCaptureWhiteBalanceModeAutoWhiteBalance forDevice:inputDevice];
     
     if ( [captureSession canAddInput:deviceInput] )
@@ -170,11 +165,6 @@
 		if ([device lockForConfiguration:&error])
 		{
 			[device setTorchMode:torchMode];
-            // seeting the FrameRate : todo : put in a separate method
-            // with activeFormat.videoSupportedFrameRateRanges
-            [device setActiveVideoMaxFrameDuration:CMTimeMake(1, 30.0)];
-            [device setActiveVideoMinFrameDuration:CMTimeMake(1, 30.0)];
-			
             [device unlockForConfiguration];
             
 		}
@@ -184,6 +174,27 @@
 		}
 	}
 }
+
++ (void)setFrameRate:(double)frameRate forDevice:(AVCaptureDevice *)device
+{
+	
+		NSError *error = nil;
+		if ([device lockForConfiguration:&error])
+		{
+            // with activeFormat.videoSupportedFrameRateRanges
+            [device setActiveVideoMaxFrameDuration:CMTimeMake(1, frameRate)];
+            [device setActiveVideoMinFrameDuration:CMTimeMake(1, frameRate)];
+			
+            [device unlockForConfiguration];
+            
+		}
+		else
+		{
+			NSLog(@"%@", error);
+		}
+	
+}
+
 // La methode du dessous a été ajoutée par A.Poisson pour forcer le focus
 + (void)setFocusMode:(AVCaptureFocusMode)focusMode forDevice:(AVCaptureDevice *)device
 {
@@ -232,10 +243,14 @@
 
 
 - (IBAction)startRecording:(id)sender {
-    
+    [self viewDidLoad]; // fixme : this is not the best way but this works
     
 }
 
 - (IBAction)stopRecording:(id)sender {
+   // self.pulseLabel= nil;
+   //  self.graphView = nil;
+    [captureSession stopRunning];
+    
 }
 @end

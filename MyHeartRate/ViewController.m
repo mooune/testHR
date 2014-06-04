@@ -243,13 +243,18 @@
 
 
 - (IBAction)startRecording:(id)sender {
-    [self viewDidLoad]; // fixme : this is not the best way but this works
-    
-}
+
+    /*
+  captureSession=nil;
+    dataOutput=nil;
+
+    [self viewDidLoad]; 
+  */
+  }
 
 - (IBAction)stopRecording:(id)sender {
-   // self.pulseLabel= nil;
-   //  self.graphView = nil;
+    self.pulseLabel= nil;
+     self.graphView = nil;
     [captureSession stopRunning];
     
 }

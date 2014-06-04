@@ -13,10 +13,7 @@
 @property (nonatomic, strong) AVCaptureVideoDataOutput *dataOutput;
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) int nFramesW;
-@property double *pulse;
 @property double sumY;
-@property double sumMax;
-@property double sumMin;
 
 @property double sumForChart;
 @property int pulseComp;
@@ -31,11 +28,9 @@
 {
     AVCaptureSession *captureSession;
     AVCaptureVideoDataOutput *_dataOutput;
-    CALayer *_customPreviewLayer;
-    NSMutableArray *array;
+
     double *pulse;
-    //__weak IBOutlet GraphView *graphView;
-    // double window[128];
+
 }
 
 @synthesize pulseComp;
@@ -44,10 +39,6 @@
 @synthesize nFramesW;
 @synthesize pulseLabel;
 @synthesize sumY;
-@synthesize sumMin;
-@synthesize sumMax;
-@synthesize sumForChart;
-@synthesize pulse;
 @synthesize graphView;
 
 
@@ -57,37 +48,17 @@
     
     nFramesW=128;
     
-    
     [self setupCameraSession];
-    [self.view addSubview:pulseLabel];
-    
-    
-    /*
-    [NSTimer scheduledTimerWithTimeInterval:0.03333f
-                                     target:self
-                                   selector:@selector(displaySumY)
-                                   userInfo:NULL
-                                    repeats:YES];
-    */
+
     [captureSession startRunning];
     
     [graphView setIsAccessibilityElement:YES];
     
 }
 
-- (void)displaySumY
-{
-    /*
-    [graphView addX:sumForChart];
-    
-    pulseLabel.text=[NSString stringWithFormat:@"%d",pulseComp];
-    // sumY=1.00;
-    */
-}
 
 - (void)setupCameraSession
 {
-    //  ICLog;
     
     // Session
     captureSession = [AVCaptureSession new];
@@ -129,25 +100,14 @@
     
     size_t width = CVPixelBufferGetWidthOfPlane(imageBuffer, 0);
     size_t height = CVPixelBufferGetHeightOfPlane(imageBuffer, 0);
-    //   size_t bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
-    //  OSType leType =  CVPixelBufferGetPixelFormatType(imageBuffer);
-    //  size_t dataSize = CVPixelBufferGetDataSize (imageBuffer);
-    /*
-     NSLog(@" datasize %zu ", dataSize);
-     NSLog(@"Le type %u ", (char)leType);
-     NSLog(@"  bytes per row %zu",bytesPerRow);
-     */
-    // int size = height * bytesPerRow;
-    //double sumY = 0.0;
+
     uint8_t *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
     
-    //   NSLog(@"dimensions: %lu x %lu", width, height);
     
     sumY = 0;
     
     for (uint y = round( height*1/3); y < round(height*2/3); y += 1)
     {
-        // uint8_t *p = baseAddress + y * bytesPerRow; // this gets Y' in YUV
         
         for (uint x = round(width*1/3); x < round(width*2/3); x += 1)
         {
@@ -159,11 +119,9 @@
         }
     }
     
-    sumForChart = sumY;
+   // sumForChart = sumY;
     //  NSLog(@" sumY %f",sumY);
-    //    [graphView addX:sumY]; // the chart in grapView is never edited
-    //    sumYLabel.text=[NSString stringWithFormat:@"I never appear"];
-    
+
     
     for (int count=0;count<nFramesW-1;count++)
     {
@@ -175,21 +133,7 @@
     // NSLog(@" windows [nFrames-1] %f",window[nFramesW-1]);
     //  NSLog(@" \n ");
     
-    
-    
-    // NSLog(@"%@",history);
-    // NSLog(@" pulse %f", pulseComp);
-    // self.pulseLabel.text=[NSString stringWithFormat:@"%f",pulseComp];
-    
-    // some print
-    //    NSLog(@" %d Array is : %@",nFramesW,array[nFramesW-1]);
-    //    NSLog(@" %d Array is : %@",nFramesW-1,array[nFramesW-2]);
-    
-    //  NSLog(@" %f ",sumY);
-    
-    // udpate label
-    //    [pulseLabel setText:@"I never appears"];
-    
+
     // release
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     
@@ -203,22 +147,12 @@
     getPulseTemporal_initialize();
     pulseComp = getPulseTemporal(buffer,30.00);
     getPulseTemporal_terminate();
-    //    getPulseFrequentialViaMax_initialize();
-    //    pulseComp = getPulseFrequentialViaMax(window,30.00);
-    //    getPulseFrequentialViaMax_terminate();
+
 }
-/*
- 
- -(void)computePulse
- {
- 
- *pulse=getPulseTemporal((double)*array, 30.00);
- }
- */
+
 - (void) viewDidUnload {
     self.pulseLabel= nil;
     self.graphView = nil;
-    
     [captureSession stopRunning];
     
 }
@@ -298,6 +232,8 @@
 
 
 - (IBAction)startRecording:(id)sender {
+    
+    
 }
 
 - (IBAction)stopRecording:(id)sender {

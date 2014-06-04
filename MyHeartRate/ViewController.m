@@ -1,8 +1,8 @@
 //
 //  ViewController.m
 //
-//  Created by Alexandre Poisson on 30/06/14.
-//
+//  Created by Alexandre Poisson on 1st june 2014
+//  Copyright (c) 2014, Alexandre Poisson
 #import "ViewController.h"
 #import "GraphView.h"
 #import "getPulseTemporal.h"
@@ -14,12 +14,7 @@
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) int nFramesW;
 @property double sumY;
-
-@property double sumForChart;
 @property int pulseComp;
-
-
-- (void)setupCameraSession;
 
 @end
 
@@ -39,20 +34,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     nFramesW=128;
     
-    [self setupCameraSession];
-
-    [captureSession startRunning];
-    
-    [graphView setIsAccessibilityElement:YES];
-    
-}
-
-
-- (void)setupCameraSession
-{
     
     // Session
     captureSession = [AVCaptureSession new];
@@ -83,7 +71,12 @@
     [captureSession commitConfiguration];
     
     dispatch_queue_t queue = dispatch_queue_create("VideoQueue", DISPATCH_QUEUE_SERIAL);
+    
     [dataOutput setSampleBufferDelegate:self queue:queue];
+    
+    
+    [captureSession startRunning];
+
 }
 
 
@@ -101,10 +94,11 @@
     
     sumY = 0;
     
-    for (uint y = round( height*1/3); y < round(height*2/3); y += 1)
+    // we only capture a section of the Buffer to save time
+    
+    for (uint y = round( height*1/4); y < round(height*3/4); y += 1)
     {
-        
-        for (uint x = round(width*1/3); x < round(width*2/3); x += 1)
+        for (uint x = round(width*1/4); x < round(width*3/4); x += 1)
         {
             // NSLog(@"color at %dx %d: %u", x, y, *baseAddress);
             sumY += *baseAddress;
@@ -113,20 +107,16 @@
             
         }
     }
-    
-   // sumForChart = sumY;
     //  NSLog(@" sumY %f",sumY);
 
     
     for (int count=0;count<nFramesW-1;count++)
     {
         buffer[count] = buffer[count+1];
-        // NSLog(@"windows [%d]  %f",count,window[count]);
     }
     
     buffer[nFramesW-1] = sumY;
-    // NSLog(@" windows [nFrames-1] %f",window[nFramesW-1]);
-    //  NSLog(@" \n ");
+
     
 
     // release
@@ -139,6 +129,7 @@
 
     
     pulseComp=0.0;
+    
     getPulseTemporal_initialize();
     pulseComp = getPulseTemporal(buffer,30.00);
     getPulseTemporal_terminate();
@@ -146,10 +137,26 @@
 }
 
 - (void) viewDidUnload {
+    [super viewDidUnload];
     self.pulseLabel= nil;
     self.graphView = nil;
     [captureSession stopRunning];
+    self.dataOutput=nil;
+
+    self.captureSession=nil;
+ //   [captureSession release];
     
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.pulseLabel= nil;
+    self.graphView = nil;
+  //  self.captureSession.delegate=nil;
+    [captureSession stopRunning];
+    self.dataOutput=nil;
+
+    self.captureSession=nil;
 }
 
 - (void)dealloc {
@@ -243,19 +250,15 @@
 
 
 - (IBAction)startRecording:(id)sender {
+    
+    [self viewWillAppear:NO];
 
-    /*
-  captureSession=nil;
-    dataOutput=nil;
-
-    [self viewDidLoad]; 
-  */
   }
 
 - (IBAction)stopRecording:(id)sender {
-    self.pulseLabel= nil;
-     self.graphView = nil;
-    [captureSession stopRunning];
+
+    self.dataOutput=nil;
+    self.captureSession=nil;
     
 }
 @end

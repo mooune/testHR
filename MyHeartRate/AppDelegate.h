@@ -1,18 +1,15 @@
 //
 //  AppDelegate.h
-//  Shooter
 //
-//  Created by Geppy Parziale on 2/24/12.
-//  Copyright (c) 2012 iNVASIVECODE, Inc. All rights reserved.
-//
+//  Created by Alexandre Poisson on 1st june 2014
+//  Copyright (c) 2014, Alexandre Poisson
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-//@property (nonatomic, retain) IBOutlet UIWindow *window;
-//@property (nonatomic, retain) IBOutlet ViewController *viewController;
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end

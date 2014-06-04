@@ -1,6 +1,5 @@
 //
 //  ViewController.h
-//  Shooter
 //
 //  Created by Alexandre Poisson on 1st june 2014
 //  Copyright (c) 2014, Alexandre Poisson

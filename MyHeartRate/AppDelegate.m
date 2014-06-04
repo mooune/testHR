@@ -1,10 +1,9 @@
 //
 //  AppDelegate.m
-//  Shooter
 //
-//  Created by Geppy Parziale on 2/24/12.
-//  Copyright (c) 2012 iNVASIVECODE, Inc. All rights reserved.
-//
+//  Created by Alexandre Poisson on 1st june 2014
+//  Copyright (c) 2014, Alexandre Poisson
+
 
 #import "AppDelegate.h"
 
@@ -15,18 +14,17 @@
 @synthesize window;
 //@synthesize viewController;
 
-/*
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }
 
- */
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

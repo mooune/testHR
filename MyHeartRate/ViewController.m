@@ -14,7 +14,6 @@
 @property (nonatomic, strong) AVCaptureVideoDataOutput *dataOutput;
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) int nFramesW;
-@property double sumY;
 @property int pulseComp;
 @property int pulseDisplayed;
 
@@ -31,7 +30,6 @@
 @synthesize nFramesW;
 @synthesize pulseLabel;
 
-@synthesize sumY;
 @synthesize graphView;
 
 
@@ -95,8 +93,8 @@
 
     uint8_t *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
     
+    double sumY = 0 ;
     
-    sumY = 0;
     
     // we only capture a section of the Buffer to save time
     

@@ -32,6 +32,14 @@
     
 }
 
+- (void)displayRythm:(double [128]) x {
+    
+    *scaledDatas = *x ;
+	[self setNeedsDisplay];
+
+    
+}
+
 - (void)drawGraphInContext:(CGContextRef)context withBounds:(CGRect)bounds {
     
     // Save any previous graphics state settings before setting the color and line width for the current draw.

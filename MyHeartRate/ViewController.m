@@ -6,6 +6,7 @@
 #import "ViewController.h"
 #import "GraphView.h"
 #import "getPulseTemporal.h"
+#import "scaleAndCenter.h"
 
 @interface ViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -15,6 +16,7 @@
 @property (nonatomic) int nFramesW;
 @property double sumY;
 @property int pulseComp;
+@property int pulseDisplayed;
 
 @end
 
@@ -23,10 +25,12 @@
 
 
 @synthesize pulseComp;
+@synthesize pulseDisplayed;
 @synthesize captureSession;
 @synthesize dataOutput;
 @synthesize nFramesW;
 @synthesize pulseLabel;
+
 @synthesize sumY;
 @synthesize graphView;
 
@@ -40,7 +44,7 @@
     [super viewWillAppear:animated];
     
     nFramesW=128;
-    
+    pulseDisplayed = 0;
     
     // Session
     captureSession = [AVCaptureSession new];
@@ -96,18 +100,17 @@
     
     // we only capture a section of the Buffer to save time
     
-    for (uint y = round( height*1/4); y < round(height*3/4); y += 1)
+    for (uint y = round( height*1/3); y < round(height*2/3); y += 2)
     {
-        for (uint x = round(width*1/4); x < round(width*3/4); x += 1)
+        for (uint x = round(width*1/3); x < round(width*2/3); x += 2)
         {
-            // NSLog(@"color at %dx %d: %u", x, y, *baseAddress);
             sumY += *baseAddress;
-            //NSLog(@" val %hhu",*baseAddress);
             baseAddress += 1;
             
         }
     }
-    //  NSLog(@" sumY %f",sumY);
+   //   NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
+                                    // values can then be imported in MATLAB to test the algorithm
 
     
     for (int count=0;count<nFramesW-1;count++)
@@ -123,16 +126,39 @@
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [graphView addX:sumY];
-        pulseLabel.text=[NSString stringWithFormat:@"%d",pulseComp];
+                    [graphView addX:sumY];
+   // switch  if the camera is obturated with the finger
+        if (sumY > 150000)  // this value is strongely correlated to the bondaries and increments in the for loops
+        {
+        pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];        }
+        
+        else {
+
+            
+            scaleAndCenter_initialize();
+            scaleAndCenter(buffer, scaledBuffer);
+            scaleAndCenter_terminate();
+            
+            
+            getPulseTemporal_initialize();
+            pulseComp = getPulseTemporal(scaledBuffer,30.00);
+             getPulseTemporal_terminate();
+            if (pulseComp > 0) {
+                pulseDisplayed = pulseComp ;
+                pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
+
+            }
+
+            
+                 }
+        
+
     });
 
     
     pulseComp=0.0;
     
-    getPulseTemporal_initialize();
-    pulseComp = getPulseTemporal(buffer,30.00);
-    getPulseTemporal_terminate();
+
 
 }
 

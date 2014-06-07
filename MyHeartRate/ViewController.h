@@ -17,6 +17,7 @@
 @interface ViewController : UIViewController {
     
     double buffer[128];
+    double scaledBuffer[128];
 }
 
 

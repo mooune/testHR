@@ -10,10 +10,8 @@
 
 @interface GraphView : UIView {
 	NSUInteger nextIndex;
-	double history[128];
     double scaledDatas[128];
 }
 
-- (void)addX:(double)x;
 - (void)displayRythm:(double [128]) x;
 @end

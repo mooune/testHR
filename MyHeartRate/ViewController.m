@@ -124,19 +124,17 @@
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-                    [graphView addX:sumY];
+     //   [graphView addX:sumY];
+        scaleAndCenter_initialize();
+        scaleAndCenter(buffer, scaledBuffer);
+        scaleAndCenter_terminate();
+       [graphView displayRythm:scaledBuffer];
    // switch  if the camera is obturated with the finger
-        if (sumY > 150000)  // this value is strongely correlated to the bondaries and increments in the for loops
+        if (sumY > 150000)  // this value is strongely correlated to the boundaries and increments in the for loops
         {
         pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];        }
         
         else {
-
-            
-            scaleAndCenter_initialize();
-            scaleAndCenter(buffer, scaledBuffer);
-            scaleAndCenter_terminate();
-            
             
             getPulseTemporal_initialize();
             pulseComp = getPulseTemporal(scaledBuffer,30.00);

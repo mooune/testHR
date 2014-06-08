@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F26D2CE1935097800B3F615 /* icone.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 9F26D2CD1935097800B3F615 /* icone.PNG */; };
 		9F26D2D019350B6900B3F615 /* icone copie.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F26D2CF19350B6900B3F615 /* icone copie.png */; };
 		9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */; };
 		9F587BBE1930EA30008F0839 /* scaleAndCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F587BBC1930EA30008F0839 /* scaleAndCenter.c */; };
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F26D2CD1935097800B3F615 /* icone.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icone.PNG; path = ../../../../MATLAB/HeartRate/icone.PNG; sourceTree = "<group>"; };
 		9F26D2CF19350B6900B3F615 /* icone copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone copie.png"; path = "../../../../MATLAB/HeartRate/icone copie.png"; sourceTree = "<group>"; };
 		9F4DB5DD192BC4E800771AFB /* getPulseTemporal_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getPulseTemporal_types.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal_types.h; sourceTree = "<group>"; };
 		9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getPulseTemporal.c; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal.c; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				9F7F21D31937D23700567E6B /* newInterface.png */,
 				9F6C29C3191AC97D00F86238 /* Images.xcassets */,
 				9F26D2CF19350B6900B3F615 /* icone copie.png */,
-				9F26D2CD1935097800B3F615 /* icone.PNG */,
 				9F6EA1DD1938A7CE00076C44 /* countour3.jpg */,
 				9F6C29B2191AC97D00F86238 /* Supporting Files */,
 				9F6A1AC619310E4500F7C9EF /* Main.storyboard */,
@@ -294,7 +291,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6C29C4191AC97D00F86238 /* Images.xcassets in Resources */,
-				9F26D2CE1935097800B3F615 /* icone.PNG in Resources */,
 				9F9A63E8193FC9B3002A262C /* Default-568h@2x.png in Resources */,
 				9F6C29B6191AC97D00F86238 /* InfoPlist.strings in Resources */,
 				9F6EA1E01938AC2000076C44 /* Icone120.png in Resources */,

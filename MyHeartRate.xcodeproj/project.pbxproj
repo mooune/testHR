@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F26D2D019350B6900B3F615 /* icone copie.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F26D2CF19350B6900B3F615 /* icone copie.png */; };
 		9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */; };
 		9F587BBE1930EA30008F0839 /* scaleAndCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F587BBC1930EA30008F0839 /* scaleAndCenter.c */; };
 		9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A1AC619310E4500F7C9EF /* Main.storyboard */; };
@@ -30,10 +29,16 @@
 		9F6C29F8191ACB1D00F86238 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */; };
 		9F6C29FA191ACB2A00F86238 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */; };
 		9F6EA1DE1938A7CE00076C44 /* countour3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F6EA1DD1938A7CE00076C44 /* countour3.jpg */; };
-		9F6EA1E01938AC2000076C44 /* Icone120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6EA1DF1938AC2000076C44 /* Icone120.png */; };
-		9F7F21D41937D23700567E6B /* newInterface.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F21D31937D23700567E6B /* newInterface.png */; };
-		9F9A63E4193A5F85002A262C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* ViewController.m */; };
-		9F9A63E8193FC9B3002A262C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F9A63E7193FC9B3002A262C /* Default-568h@2x.png */; };
+		9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* HRViewController.m */; };
+		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
+		9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6D19449565006A90B4 /* PageContentViewController.m */; };
+		9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033B1948EBF800F68668 /* Default-568h@2x.png */; };
+		9FF3033E1948EE1800F68668 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033D1948EE1800F68668 /* page2.png */; };
+		9FF303401948EE1E00F68668 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033F1948EE1E00F68668 /* page3.png */; };
+		9FF303421948EE2600F68668 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303411948EE2600F68668 /* page1.png */; };
+		9FF303441948EF3000F68668 /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303431948EF3000F68668 /* page4.png */; };
+		9FF303481948F21200F68668 /* Icone60x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303471948F21200F68668 /* Icone60x2.png */; };
+		9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303491948FA6F00F68668 /* newInterface.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F26D2CF19350B6900B3F615 /* icone copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone copie.png"; path = "../../../../MATLAB/HeartRate/icone copie.png"; sourceTree = "<group>"; };
 		9F4DB5DD192BC4E800771AFB /* getPulseTemporal_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getPulseTemporal_types.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal_types.h; sourceTree = "<group>"; };
 		9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getPulseTemporal.c; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal.c; sourceTree = "<group>"; };
 		9F4DB5DF192BC4E800771AFB /* getPulseTemporal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getPulseTemporal.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal.h; sourceTree = "<group>"; };
@@ -82,11 +86,19 @@
 		9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9F6EA1DD1938A7CE00076C44 /* countour3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = countour3.jpg; path = ../../../../../Documents/MontageHeartRateApp/countour3.jpg; sourceTree = "<group>"; };
-		9F6EA1DF1938AC2000076C44 /* Icone120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icone120.png; path = ../../../../../Documents/MontageHeartRateApp/Icone120.png; sourceTree = "<group>"; };
-		9F7F21D31937D23700567E6B /* newInterface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newInterface.png; path = ../../../../MATLAB/HeartRate/newInterface.png; sourceTree = "<group>"; };
-		9F9A63E2193A5F85002A262C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9F9A63E3193A5F85002A262C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9F9A63E7193FC9B3002A262C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9F9A63E2193A5F85002A262C /* HRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRViewController.h; sourceTree = "<group>"; };
+		9F9A63E3193A5F85002A262C /* HRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRViewController.m; sourceTree = "<group>"; };
+		9FB31E69194493D6006A90B4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9FB31E6A194493D6006A90B4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FB31E6C19449565006A90B4 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		9FB31E6D19449565006A90B4 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		9FF3033B1948EBF800F68668 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "MyHeartRate/Default-568h@2x.png"; sourceTree = "<group>"; };
+		9FF3033D1948EE1800F68668 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		9FF3033F1948EE1E00F68668 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		9FF303411948EE2600F68668 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
+		9FF303431948EF3000F68668 /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		9FF303471948F21200F68668 /* Icone60x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icone60x2.png; sourceTree = "<group>"; };
+		9FF303491948FA6F00F68668 /* newInterface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newInterface.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +133,7 @@
 		9F6C299F191AC97D00F86238 = {
 			isa = PBXGroup;
 			children = (
-				9F9A63E7193FC9B3002A262C /* Default-568h@2x.png */,
+				9FF3033B1948EBF800F68668 /* Default-568h@2x.png */,
 				9F587BBB1930EA30008F0839 /* scaleAndCenter_types.h */,
 				9F587BBC1930EA30008F0839 /* scaleAndCenter.c */,
 				9F587BBD1930EA30008F0839 /* scaleAndCenter.h */,
@@ -164,19 +176,26 @@
 		9F6C29B1191AC97D00F86238 /* MyHeartRate */ = {
 			isa = PBXGroup;
 			children = (
-				9F9A63E2193A5F85002A262C /* ViewController.h */,
-				9F9A63E3193A5F85002A262C /* ViewController.m */,
+				9FB31E69194493D6006A90B4 /* ViewController.h */,
+				9FB31E6A194493D6006A90B4 /* ViewController.m */,
+				9F9A63E2193A5F85002A262C /* HRViewController.h */,
+				9F9A63E3193A5F85002A262C /* HRViewController.m */,
 				9F6C29EE191ACAB900F86238 /* GraphView.h */,
 				9F6C29EF191ACAB900F86238 /* GraphView.m */,
 				9F6C29BA191AC97D00F86238 /* AppDelegate.h */,
 				9F6C29BB191AC97D00F86238 /* AppDelegate.m */,
-				9F6EA1DF1938AC2000076C44 /* Icone120.png */,
-				9F7F21D31937D23700567E6B /* newInterface.png */,
+				9FF303411948EE2600F68668 /* page1.png */,
+				9FF3033D1948EE1800F68668 /* page2.png */,
+				9FF3033F1948EE1E00F68668 /* page3.png */,
+				9FF303431948EF3000F68668 /* page4.png */,
+				9FF303471948F21200F68668 /* Icone60x2.png */,
 				9F6C29C3191AC97D00F86238 /* Images.xcassets */,
-				9F26D2CF19350B6900B3F615 /* icone copie.png */,
 				9F6EA1DD1938A7CE00076C44 /* countour3.jpg */,
+				9FF303491948FA6F00F68668 /* newInterface.png */,
 				9F6C29B2191AC97D00F86238 /* Supporting Files */,
 				9F6A1AC619310E4500F7C9EF /* Main.storyboard */,
+				9FB31E6C19449565006A90B4 /* PageContentViewController.h */,
+				9FB31E6D19449565006A90B4 /* PageContentViewController.m */,
 			);
 			path = MyHeartRate;
 			sourceTree = "<group>";
@@ -290,13 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF303441948EF3000F68668 /* page4.png in Resources */,
 				9F6C29C4191AC97D00F86238 /* Images.xcassets in Resources */,
-				9F9A63E8193FC9B3002A262C /* Default-568h@2x.png in Resources */,
+				9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */,
+				9FF3033E1948EE1800F68668 /* page2.png in Resources */,
 				9F6C29B6191AC97D00F86238 /* InfoPlist.strings in Resources */,
-				9F6EA1E01938AC2000076C44 /* Icone120.png in Resources */,
-				9F26D2D019350B6900B3F615 /* icone copie.png in Resources */,
-				9F7F21D41937D23700567E6B /* newInterface.png in Resources */,
+				9FF303401948EE1E00F68668 /* page3.png in Resources */,
+				9FF303421948EE2600F68668 /* page1.png in Resources */,
 				9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */,
+				9FF303481948F21200F68668 /* Icone60x2.png in Resources */,
+				9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */,
 				9F6EA1DE1938A7CE00076C44 /* countour3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,10 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9A63E4193A5F85002A262C /* ViewController.m in Sources */,
+				9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */,
+				9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */,
 				9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */,
 				9F6C29F0191ACAB900F86238 /* GraphView.m in Sources */,
 				9F587BBE1930EA30008F0839 /* scaleAndCenter.c in Sources */,
+				9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */,
 				9F6C29BC191AC97D00F86238 /* AppDelegate.m in Sources */,
 				9F6C29B8191AC97D00F86238 /* main.m in Sources */,
 			);

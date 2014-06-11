@@ -1,10 +1,10 @@
 /*
  File: GraphView.m
- Abstract: A custom view for plotting history of x
+ Abstract: A custom view for plotting a vector given in argument of displayRythm
  */
 
 #import "GraphView.h"
-#import "ViewController.h"
+#import "HRViewController.h"
 #import "scaleAndCenter.h"
 #import "getPulseTemporal.h"
 

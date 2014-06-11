@@ -186,7 +186,7 @@
     
 }
 
-// La methode du dessous a été ajoutée par A.Poisson pour forcer la torche afin d eclairer le doigt
+// force torch
 + (void)setTorchMode:(AVCaptureTorchMode)torchMode forDevice:(AVCaptureDevice *)device
 {
 	if ([device hasFlash] && [device isTorchModeSupported:torchMode])
@@ -204,7 +204,7 @@
 		}
 	}
 }
-
+// force framerate
 + (void)setFrameRate:(double)frameRate forDevice:(AVCaptureDevice *)device
 {
 	
@@ -225,7 +225,7 @@
 	
 }
 
-// La methode du dessous a été ajoutée par A.Poisson pour forcer le focus
+// force focus
 + (void)setFocusMode:(AVCaptureFocusMode)focusMode forDevice:(AVCaptureDevice *)device
 {
     NSError *error = nil;
@@ -241,7 +241,7 @@
     }
 }
 
-// La methode du dessous a été ajoutée par A.Poisson pour forcer le focus
+// force exposure
 + (void)setExposureMode:(AVCaptureExposureMode)exposureMode forDevice:(AVCaptureDevice *)device
 {
     NSError *error = nil;
@@ -256,6 +256,7 @@
     }
 }
 
+// force white balance
 + (void)setWhiteBalanceMode:(AVCaptureWhiteBalanceMode)whiteBalanceMode forDevice:(AVCaptureDevice *)device
 {
     NSError *error = nil;

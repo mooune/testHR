@@ -10,20 +10,13 @@
 
 @implementation GraphView
 
-
-
-
 - (void)displayRythm:(double [128]) x {
-    
-    
     for (int j=0;j<128;j++)
-    {
-        scaledDatas[j] = x[j];
-    }
-    ;
+        {
+            scaledDatas[j] = x[j];
+        }
 	[self setNeedsDisplay];
 
-    
 }
 
 - (void)drawGraphInContext:(CGContextRef)context withBounds:(CGRect)bounds {
@@ -37,8 +30,6 @@
 - (void)drawHistoryFromIndex:(NSUInteger)index inContext:(CGContextRef)context bounds:(CGRect)bounds {
 
     CGFloat value;
-
- 
  CGContextBeginPath(context);
  for (NSUInteger counter = 0; counter < 128; ++counter) {
  // UIView referential has the Y axis going down, so we need to draw upside-down.

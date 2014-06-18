@@ -16,19 +16,18 @@
 		9F6C29B6191AC97D00F86238 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C29B4191AC97D00F86238 /* InfoPlist.strings */; };
 		9F6C29B8191AC97D00F86238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C29B7191AC97D00F86238 /* main.m */; };
 		9F6C29BC191AC97D00F86238 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C29BB191AC97D00F86238 /* AppDelegate.m */; };
-		9F6C29C4191AC97D00F86238 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C29C3191AC97D00F86238 /* Images.xcassets */; };
 		9F6C29CB191AC97D00F86238 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29CA191AC97D00F86238 /* XCTest.framework */; };
 		9F6C29CC191AC97D00F86238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AB191AC97D00F86238 /* Foundation.framework */; };
 		9F6C29CD191AC97D00F86238 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AF191AC97D00F86238 /* UIKit.framework */; };
 		9F6C29D5191AC97D00F86238 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C29D3191AC97D00F86238 /* InfoPlist.strings */; };
 		9F6C29D7191AC97D00F86238 /* MyHeartRateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C29D6191AC97D00F86238 /* MyHeartRateTests.m */; };
-		9F6C29F0191ACAB900F86238 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C29EF191ACAB900F86238 /* GraphView.m */; };
 		9F6C29F2191ACAF800F86238 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F1191ACAF800F86238 /* Accelerate.framework */; };
 		9F6C29F4191ACB0200F86238 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F3191ACB0200F86238 /* CoreMedia.framework */; };
 		9F6C29F6191ACB0C00F86238 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */; };
 		9F6C29F8191ACB1D00F86238 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */; };
 		9F6C29FA191ACB2A00F86238 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */; };
 		9F6EA1DE1938A7CE00076C44 /* countour3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F6EA1DD1938A7CE00076C44 /* countour3.jpg */; };
+		9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F91E9DA19522AE70039F7BA /* Images.xcassets */; };
 		9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* HRViewController.m */; };
 		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
 		9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6D19449565006A90B4 /* PageContentViewController.m */; };
@@ -39,6 +38,7 @@
 		9FF303441948EF3000F68668 /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303431948EF3000F68668 /* page4.png */; };
 		9FF303481948F21200F68668 /* Icone60x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303471948F21200F68668 /* Icone60x2.png */; };
 		9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303491948FA6F00F68668 /* newInterface.png */; };
+		9FF3034D194903D200F68668 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3034C194903D200F68668 /* GraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,20 +72,18 @@
 		9F6C29B9191AC97D00F86238 /* MyHeartRate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHeartRate-Prefix.pch"; sourceTree = "<group>"; };
 		9F6C29BA191AC97D00F86238 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F6C29BB191AC97D00F86238 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9F6C29C3191AC97D00F86238 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F6C29C9191AC97D00F86238 /* MyHeartRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHeartRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6C29CA191AC97D00F86238 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9F6C29D2191AC97D00F86238 /* MyHeartRateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyHeartRateTests-Info.plist"; sourceTree = "<group>"; };
 		9F6C29D4191AC97D00F86238 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F6C29D6191AC97D00F86238 /* MyHeartRateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHeartRateTests.m; sourceTree = "<group>"; };
-		9F6C29EE191ACAB900F86238 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphView.h; path = ../GraphView.h; sourceTree = "<group>"; };
-		9F6C29EF191ACAB900F86238 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphView.m; path = ../GraphView.m; sourceTree = "<group>"; };
 		9F6C29F1191ACAF800F86238 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		9F6C29F3191ACB0200F86238 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9F6EA1DD1938A7CE00076C44 /* countour3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = countour3.jpg; path = ../../../../../Documents/MontageHeartRateApp/countour3.jpg; sourceTree = "<group>"; };
+		9F91E9DA19522AE70039F7BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F9A63E2193A5F85002A262C /* HRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRViewController.h; sourceTree = "<group>"; };
 		9F9A63E3193A5F85002A262C /* HRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRViewController.m; sourceTree = "<group>"; };
 		9FB31E69194493D6006A90B4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		9FF303431948EF3000F68668 /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
 		9FF303471948F21200F68668 /* Icone60x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icone60x2.png; sourceTree = "<group>"; };
 		9FF303491948FA6F00F68668 /* newInterface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newInterface.png; sourceTree = "<group>"; };
+		9FF3034B194903D200F68668 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		9FF3034C194903D200F68668 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,12 +176,12 @@
 		9F6C29B1191AC97D00F86238 /* MyHeartRate */ = {
 			isa = PBXGroup;
 			children = (
+				9FF3034B194903D200F68668 /* GraphView.h */,
+				9FF3034C194903D200F68668 /* GraphView.m */,
 				9FB31E69194493D6006A90B4 /* ViewController.h */,
 				9FB31E6A194493D6006A90B4 /* ViewController.m */,
 				9F9A63E2193A5F85002A262C /* HRViewController.h */,
 				9F9A63E3193A5F85002A262C /* HRViewController.m */,
-				9F6C29EE191ACAB900F86238 /* GraphView.h */,
-				9F6C29EF191ACAB900F86238 /* GraphView.m */,
 				9F6C29BA191AC97D00F86238 /* AppDelegate.h */,
 				9F6C29BB191AC97D00F86238 /* AppDelegate.m */,
 				9FF303411948EE2600F68668 /* page1.png */,
@@ -189,9 +189,9 @@
 				9FF3033F1948EE1E00F68668 /* page3.png */,
 				9FF303431948EF3000F68668 /* page4.png */,
 				9FF303471948F21200F68668 /* Icone60x2.png */,
-				9F6C29C3191AC97D00F86238 /* Images.xcassets */,
 				9F6EA1DD1938A7CE00076C44 /* countour3.jpg */,
 				9FF303491948FA6F00F68668 /* newInterface.png */,
+				9F91E9DA19522AE70039F7BA /* Images.xcassets */,
 				9F6C29B2191AC97D00F86238 /* Supporting Files */,
 				9F6A1AC619310E4500F7C9EF /* Main.storyboard */,
 				9FB31E6C19449565006A90B4 /* PageContentViewController.h */,
@@ -310,10 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF303441948EF3000F68668 /* page4.png in Resources */,
-				9F6C29C4191AC97D00F86238 /* Images.xcassets in Resources */,
 				9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */,
 				9FF3033E1948EE1800F68668 /* page2.png in Resources */,
 				9F6C29B6191AC97D00F86238 /* InfoPlist.strings in Resources */,
+				9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */,
 				9FF303401948EE1E00F68668 /* page3.png in Resources */,
 				9FF303421948EE2600F68668 /* page1.png in Resources */,
 				9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */,
@@ -341,7 +341,7 @@
 				9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */,
 				9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */,
 				9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */,
-				9F6C29F0191ACAB900F86238 /* GraphView.m in Sources */,
+				9FF3034D194903D200F68668 /* GraphView.m in Sources */,
 				9F587BBE1930EA30008F0839 /* scaleAndCenter.c in Sources */,
 				9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */,
 				9F6C29BC191AC97D00F86238 /* AppDelegate.m in Sources */,

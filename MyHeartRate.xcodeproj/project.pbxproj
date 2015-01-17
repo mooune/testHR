@@ -26,7 +26,6 @@
 		9F6C29F6191ACB0C00F86238 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */; };
 		9F6C29F8191ACB1D00F86238 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */; };
 		9F6C29FA191ACB2A00F86238 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */; };
-		9F6EA1DE1938A7CE00076C44 /* countour3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F6EA1DD1938A7CE00076C44 /* countour3.jpg */; };
 		9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F91E9DA19522AE70039F7BA /* Images.xcassets */; };
 		9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* HRViewController.m */; };
 		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
@@ -82,7 +81,6 @@
 		9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9F6EA1DD1938A7CE00076C44 /* countour3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = countour3.jpg; path = ../../../../../Documents/MontageHeartRateApp/countour3.jpg; sourceTree = "<group>"; };
 		9F91E9DA19522AE70039F7BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F9A63E2193A5F85002A262C /* HRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRViewController.h; sourceTree = "<group>"; };
 		9F9A63E3193A5F85002A262C /* HRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRViewController.m; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				9FF3033F1948EE1E00F68668 /* page3.png */,
 				9FF303431948EF3000F68668 /* page4.png */,
 				9FF303471948F21200F68668 /* Icone60x2.png */,
-				9F6EA1DD1938A7CE00076C44 /* countour3.jpg */,
 				9FF303491948FA6F00F68668 /* newInterface.png */,
 				9F91E9DA19522AE70039F7BA /* Images.xcassets */,
 				9F6C29B2191AC97D00F86238 /* Supporting Files */,
@@ -319,7 +316,6 @@
 				9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */,
 				9FF303481948F21200F68668 /* Icone60x2.png in Resources */,
 				9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */,
-				9F6EA1DE1938A7CE00076C44 /* countour3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +464,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyHeartRate/MyHeartRate-Prefix.pch";
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -482,6 +479,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyHeartRate/MyHeartRate-Prefix.pch";
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

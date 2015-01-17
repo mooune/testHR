@@ -131,7 +131,7 @@
         scaleAndCenter_terminate();
        [graphView displayRythm:scaledBuffer];
    // switch  if the camera is obturated with the finger
-        if (sumY < 100000)  // this value is strongely correlated to the boundaries and increments in the for loops
+        if (sumY < 50000)  // this value is strongely correlated to the boundaries and increments in the for loops. Todo: find a better alternative
         {
         pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];        }
         
@@ -139,13 +139,18 @@
             
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(scaledBuffer,30.00);
-             getPulseTemporal_terminate();
-            if (pulseComp > 0)      // getPulse return 0 when the pulse is not computed
+            getPulseTemporal_terminate();
+            if (pulseComp > 30)      // getPulse return 0 when the pulse is not computed
                                 {
                                 pulseDisplayed = pulseComp ;
                                 pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
 
                                 }
+                        else
+                            {
+                                pulseLabel.text=[NSString stringWithFormat:@"--"];
+                            }
+                    
         }
         
 

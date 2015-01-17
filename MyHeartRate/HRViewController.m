@@ -41,8 +41,9 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    nFramesW=128;
+    nFramesW = 128;
     pulseDisplayed = 0;
+    pulseLabel.text=[NSString stringWithFormat:@"--"];
     
     // Session
     captureSession = [AVCaptureSession new];
@@ -56,6 +57,9 @@
     [HRViewController setTorchMode:AVCaptureTorchModeOn forDevice:inputDevice];
     [HRViewController setFocusMode:AVCaptureFocusModeLocked forDevice:inputDevice];
     [HRViewController setExposureMode:AVCaptureExposureModeLocked forDevice:inputDevice];
+    
+    
+    
     [HRViewController setFrameRate:30.0 forDevice:inputDevice];
     // [HRViewController setWhiteBalanceMode:AVCaptureWhiteBalanceModeAutoWhiteBalance forDevice:inputDevice];
     
@@ -128,6 +132,7 @@
      //   [graphView addX:sumY];
         scaleAndCenter_initialize();
         scaleAndCenter(buffer, scaledBuffer);
+ 
         scaleAndCenter_terminate();
        [graphView displayRythm:scaledBuffer];
    // switch  if the camera is obturated with the finger
@@ -140,16 +145,17 @@
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(scaledBuffer,30.00);
             getPulseTemporal_terminate();
-            if (pulseComp > 30)      // getPulse return 0 when the pulse is not computed
+            if (pulseComp > 30 && pulseComp < 200)      // getPulse return 0 when the pulse is not computed
                                 {
                                 pulseDisplayed = pulseComp ;
-                                pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
 
                                 }
-                        else
-                            {
-                                pulseLabel.text=[NSString stringWithFormat:@"--"];
-                            }
+            pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
+
+                   //     else
+                   //         {
+                   //             pulseLabel.text=[NSString stringWithFormat:@"--"];
+                   //         }
                     
         }
         
@@ -236,6 +242,8 @@
     if ([device lockForConfiguration:&error])
     {
         [device setFocusMode:focusMode];
+
+
         
         [device unlockForConfiguration];
     }
@@ -251,7 +259,7 @@
     NSError *error = nil;
     if ([device lockForConfiguration:&error])
     {
-        [device setExposureMode:exposureMode];
+    [ device setExposureModeCustomWithDuration:CMTimeMake(1, 30) ISO:46 completionHandler:nil]; // it seems iso can be set from 46 to 736
         [device unlockForConfiguration];
     }
     else

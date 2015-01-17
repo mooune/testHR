@@ -37,11 +37,9 @@
  value = scaledDatas[(index + counter) % 128] /2;
      
  if (counter > 0) {
-   //  NSLog(@" bounds %f",bounds.origin.x + (float)counter / (float)(128 - 1) * bounds.size.width);
  CGContextAddLineToPoint(context, bounds.origin.x + (float)counter / (float)(128 - 1) * bounds.size.width, bounds.origin.y + bounds.size.height / 2 + value * bounds.size.height / 2);
- } else {
-   //  NSLog(@" Move to bounds %f",bounds.origin.x + (float)counter / (float)(128 - 1) * bounds.size.width);
-
+ }
+ else {
  CGContextMoveToPoint(context, bounds.origin.x + (float)counter / (float)(128 - 1) * bounds.size.width, bounds.origin.y + bounds.size.height / 2 + value * bounds.size.height / 2);
  }
  }
@@ -56,9 +54,6 @@
     // Restore previous graphics state.
     CGContextRestoreGState(context);
 }
-
-
-
 
 
 - (void)drawRect:(CGRect)clip {

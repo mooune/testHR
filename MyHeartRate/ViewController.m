@@ -2,7 +2,9 @@
 //  ViewController.m
 //
 //  Created by Alexandre Poisson on 1st june 2014
-//  Copyright (c) 2014, Alexandre Poisson
+//  Updated on 17 January 2015
+//  This ViewController is the tutorial appearing at the begining
+//  Copyright (c) 2015, Alexandre Poisson
 
 #import "ViewController.h"
 

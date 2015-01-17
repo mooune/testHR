@@ -57,11 +57,8 @@
     [HRViewController setTorchMode:AVCaptureTorchModeOn forDevice:inputDevice];
     [HRViewController setFocusMode:AVCaptureFocusModeLocked forDevice:inputDevice];
     [HRViewController setExposureMode:AVCaptureExposureModeLocked forDevice:inputDevice];
-    
-    
-    
-    [HRViewController setFrameRate:30.0 forDevice:inputDevice];
-    // [HRViewController setWhiteBalanceMode:AVCaptureWhiteBalanceModeAutoWhiteBalance forDevice:inputDevice];
+    [HRViewController setFrameRate:30.0 forDevice:inputDevice]; // iphone 5 supports up to 30 frames per seconds
+    [HRViewController setWhiteBalanceMode:AVCaptureWhiteBalanceModeLocked forDevice:inputDevice];
     
     if ( [captureSession canAddInput:deviceInput] )
 		[captureSession addInput:deviceInput];
@@ -112,7 +109,7 @@
             
         }
     }
-   //   NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
+      NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
                                     // values can then be imported in MATLAB to test the algorithm
 
     
@@ -151,12 +148,7 @@
 
                                 }
             pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
-
-                   //     else
-                   //         {
-                   //             pulseLabel.text=[NSString stringWithFormat:@"--"];
-                   //         }
-                    
+            
         }
         
 
@@ -175,7 +167,6 @@
     self.graphView = nil;
     [captureSession stopRunning];
     self.dataOutput=nil;
-
     self.captureSession=nil;
  //   [captureSession release];
     
@@ -185,10 +176,8 @@
     [super viewWillDisappear:animated];
     self.pulseLabel= nil;
     self.graphView = nil;
-  //  self.captureSession.delegate=nil;
     [captureSession stopRunning];
     self.dataOutput=nil;
-
     self.captureSession=nil;
 }
 
@@ -206,7 +195,6 @@
 		{
 			[device setTorchMode:torchMode];
             [device unlockForConfiguration];
-            
 		}
 		else
 		{
@@ -214,19 +202,16 @@
 		}
 	}
 }
-// force framerate
+// force a fixed framerate
 + (void)setFrameRate:(double)frameRate forDevice:(AVCaptureDevice *)device
 {
-	
 		NSError *error = nil;
 		if ([device lockForConfiguration:&error])
 		{
             // with activeFormat.videoSupportedFrameRateRanges
             [device setActiveVideoMaxFrameDuration:CMTimeMake(1, frameRate)];
             [device setActiveVideoMinFrameDuration:CMTimeMake(1, frameRate)];
-			
             [device unlockForConfiguration];
-            
 		}
 		else
 		{
@@ -242,9 +227,6 @@
     if ([device lockForConfiguration:&error])
     {
         [device setFocusMode:focusMode];
-
-
-        
         [device unlockForConfiguration];
     }
     else
@@ -259,8 +241,8 @@
     NSError *error = nil;
     if ([device lockForConfiguration:&error])
     {
-    [ device setExposureModeCustomWithDuration:CMTimeMake(1, 30) ISO:46 completionHandler:nil]; // it seems iso can be set from 46 to 736
-        [device unlockForConfiguration];
+    [ device setExposureModeCustomWithDuration:CMTimeMake(1,30) ISO:92 completionHandler:nil]; // it seems iso can be set from 46 to 736
+    [device unlockForConfiguration];
     }
     else
     {
@@ -274,7 +256,16 @@
     NSError *error = nil;
     if ([device lockForConfiguration:&error])
     {
+        if ([device isWhiteBalanceModeSupported:whiteBalanceMode])
+        {
         [device setWhiteBalanceMode:whiteBalanceMode];
+        }
+        
+        else
+        {
+            NSLog(@"White balance mode is not supported");
+        }
+        
         [device unlockForConfiguration];
     }
     else
@@ -282,6 +273,7 @@
         NSLog(@"%@", error);
     }
 }
+
 
 
 

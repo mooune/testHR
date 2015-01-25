@@ -16,10 +16,10 @@
 
 @interface HRViewController : UIViewController {
     
-    double buffer[128];
+    double buffer[160]; //buffer contains more element to have a good signal after low pass filter
     double scaledBuffer[128];
+    int indexB;
 }
-
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 

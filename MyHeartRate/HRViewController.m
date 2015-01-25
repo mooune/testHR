@@ -6,7 +6,7 @@
 #import "HRViewController.h"
 #import "GraphView.h"
 #import "getPulseTemporal.h"
-#import "scaleAndCenter.h"
+#import "scaledCenteredFiltered.h"
 
 @interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -29,8 +29,8 @@
 @synthesize dataOutput;
 @synthesize nFramesW;
 @synthesize pulseLabel;
-
 @synthesize graphView;
+
 
 
 - (void)viewDidLoad
@@ -40,8 +40,8 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    nFramesW = 128;
+    indexB = 0;
+    nFramesW = 160;
     pulseDisplayed = 0;
     pulseLabel.text=[NSString stringWithFormat:@"--"];
     
@@ -95,8 +95,6 @@
     uint8_t *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
     
     double sumY = 0 ;
-  //  int pulseComp;
-    
     
     // we only capture a section of the Buffer to save time
     
@@ -109,7 +107,7 @@
             
         }
     }
-      NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
+     // NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
                                     // values can then be imported in MATLAB to test the algorithm
 
     
@@ -127,38 +125,48 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
      //   [graphView addX:sumY];
-        scaleAndCenter_initialize();
-        scaleAndCenter(buffer, scaledBuffer);
- 
-        scaleAndCenter_terminate();
+     //   pulseDisplayed = 0;
+        
+
+        scaledCenteredFiltered_initialize();
+        scaledCenteredFiltered(buffer, scaledBuffer);
+        scaledCenteredFiltered_terminate();
        [graphView displayRythm:scaledBuffer];
-   // switch  if the camera is obturated with the finger
+
+        // switch  if the camera is obturated with the finger
         if (sumY < 50000)  // this value is strongely correlated to the boundaries and increments in the for loops. Todo: find a better alternative
-        {
-        pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];        }
+                {
+                pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];
+                }
         
         else {
             
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(scaledBuffer,30.00);
             getPulseTemporal_terminate();
+            
             if (pulseComp > 30 && pulseComp < 200)      // getPulse return 0 when the pulse is not computed
                                 {
                                 pulseDisplayed = pulseComp ;
+                                // NSLog(@" pulseComp %i", pulseComp);
+                                    [graphView addToPulseBuffer:pulseComp :graphView.indexB];
+                                    graphView.indexB = graphView.indexB +1;
+                                    pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
+                                   // NSLog(@" pulseDisplayed %i",pulseComp);
 
                                 }
-            pulseLabel.text=[NSString stringWithFormat:@"%d",pulseDisplayed];
-            
+            else
+                {
+                    // pulseDisplayed = 0;
+                    }
+
+         
         }
         
-
+    // NSLog(@" pulseDisplayed %i",pulseDisplayed);
+    // 
+    
     });
-
-    
-   // pulseComp=0.0;
-    
-
-
 }
 
 - (void) viewDidUnload {

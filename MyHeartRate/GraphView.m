@@ -5,10 +5,23 @@
 
 #import "GraphView.h"
 #import "HRViewController.h"
-#import "scaleAndCenter.h"
+#import "scaledCenteredFiltered.h"
 #import "getPulseTemporal.h"
 
 @implementation GraphView
+@synthesize indexB;
+
+// this method add a new element, x,  in the buffer of computed values
+// indexBuffer (where to add x), is specified, but idealy the method should add automatically to the last index
+// a method to come will make stats on this buffer to compute a good value
+//
+
+-(void)addToPulseBuffer:(int)x :(int)indexBuffer
+{
+    pulseBuffer[indexBuffer] =x;
+    NSLog(@" this is a new entry to pulse Buffer %i at index %i",pulseBuffer[indexBuffer],indexBuffer);
+}
+
 
 - (void)displayRythm:(double [128]) x {
     for (int j=0;j<128;j++)

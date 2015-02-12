@@ -20,7 +20,10 @@
     double scaledBuffer[128];  // buffer to store the value
     double detrendBuffer[128]; // buffer to store the values after the removal of the polynomial trend
     int indexB;
+    int bufferCompPulse[200];
+    int nCompPulse;
 }
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
@@ -28,9 +31,13 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *pulseLabel;
 
+
+@property (nonatomic) float progressValue;
+
 @property (nonatomic, retain) IBOutlet GraphView *graphView;
 
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
-
+-(void)increaseProgressValue;
+-(void)addToCompPulseBuffer:(int)x :(int)indexBuffer;
 @end

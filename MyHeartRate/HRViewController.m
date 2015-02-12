@@ -35,19 +35,26 @@
 @synthesize nFramesW;
 @synthesize pulseLabel;
 @synthesize graphView;
+@synthesize progressView;
+@synthesize progressValue;
 
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
+
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     indexB = 0;
     nFramesW = 160;
     pulseDisplayed = 0;
+    nCompPulse =0;
+    progressValue = 0.0f;
     pulseLabel.text=[NSString stringWithFormat:@"--"];
     
     // Session
@@ -66,7 +73,7 @@
     [HRViewController setWhiteBalanceMode:AVCaptureWhiteBalanceModeLocked forDevice:inputDevice];
     
     if ( [captureSession canAddInput:deviceInput] )
-		[captureSession addInput:deviceInput];
+        [captureSession addInput:deviceInput];
     
     dataOutput = [AVCaptureVideoDataOutput new];
     dataOutput.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
@@ -83,7 +90,7 @@
     [dataOutput setSampleBufferDelegate:self queue:queue];
     
     [captureSession startRunning];
-
+    
 }
 
 
@@ -94,7 +101,7 @@
     
     size_t width = CVPixelBufferGetWidthOfPlane(imageBuffer, 0);
     size_t height = CVPixelBufferGetHeightOfPlane(imageBuffer, 0);
-
+    
     uint8_t *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
     
     double sumY = 0 ;
@@ -110,9 +117,9 @@
             
         }
     }
-     // NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
-                                    // values can then be imported in MATLAB to test the algorithm
-
+    // NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
+    // values can then be imported in MATLAB to test the algorithm
+    
     
     for (int count=0;count<nFramesW-1;count++)
     {
@@ -120,17 +127,17 @@
     }
     
     buffer[nFramesW-1] = sumY;
-
     
-
+    
+    
     // release
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-     //   [graphView addX:sumY];
-     //   pulseDisplayed = 0;
+        //   [graphView addX:sumY];
+        //   pulseDisplayed = 0;
         
-
+        
         scaledCenteredFiltered_initialize();
         scaledCenteredFiltered(buffer, scaledBuffer);
         scaledCenteredFiltered_terminate();
@@ -138,17 +145,17 @@
         myPolyDetrend_initialize();
         myPolyDetrend(scaledBuffer, detrendBuffer);
         scaledCenteredFiltered_terminate();
-
-       [graphView displayRythm:scaledBuffer]; // the detrend buffer gives a strange result when displayed in the graphView
-
+        
+        [graphView displayRythm:scaledBuffer]; // the detrend buffer gives a strange result when displayed in the graphView
+        
         // check  if the camera is obturated with the finger. if not, put a warning
-         // it is done by analysing the luminance value.
-            //this value is strongely correlated to the boundaries and increments in the for loops.
-            //Todo: find a better alternative
-                if (sumY < 50000)
-                {
-                pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];
-                }
+        // it is done by analysing the luminance value.
+        //this value is strongely correlated to the boundaries and increments in the for loops.
+        //Todo: find a better alternative
+        if (sumY < 50000)
+        {
+            pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];
+        }
         
         else {
             
@@ -156,28 +163,67 @@
             int pulseComp = getPulseTemporal(detrendBuffer,30.00);
             getPulseTemporal_terminate();
             
-            if (pulseComp > 30 && pulseComp < 200)      // getPulse return 0 when the pulse is not computed
-                                {
-                                pulseDisplayed = pulseComp ;
-                                // NSLog(@" pulseComp %i", pulseComp);
-                                    [graphView addToPulseBuffer:pulseComp :graphView.indexB];
-                                    graphView.indexB = graphView.indexB +1;
-                                    pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
-                                   // NSLog(@" pulseDisplayed %i",pulseComp);
-
-                                }
+            if (pulseComp > 30 && pulseComp < 200 && progressValue < 1)      // getPulse return 0 when the pulse is not computed
+            {
+                
+                pulseDisplayed = pulseComp ;
+                [graphView addToPulseBuffer:pulseComp :graphView.indexB];
+                
+                graphView.indexB = graphView.indexB +1;
+                pulseLabel.text=[NSString stringWithFormat:@"Computing Pulse..."];
+                // pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
+                // NSLog(@" pulseDisplayed %i",pulseComp);
+                [self addToCompPulseBuffer:pulseComp :nCompPulse];
+                nCompPulse = nCompPulse+1;
+                [self increaseProgressValue];
+            }
             else
-                {
-                    // pulseDisplayed = 0;
-                    }
-
-         
+            {
+                // pulseDisplayed = 0;
+            }
+            
+            
         }
         
-    // NSLog(@" pulseDisplayed %i",pulseDisplayed);
-    // 
-    
+        // NSLog(@" pulseDisplayed %i",pulseDisplayed);
+        //
+        
     });
+}
+
+-(void)addToCompPulseBuffer:(int)x :(int)indexBuffer
+{
+    bufferCompPulse[indexBuffer] =x;
+    // NSLog(@" this is a new entry to pulse Buffer %i at index %i",pulseBuffer[indexBuffer],indexBuffer);
+}
+
+
+- (void) increaseProgressValue
+{
+    
+    progressValue = progressValue + 0.005;
+    
+    progressView.progress = progressValue;
+    
+    if (progressValue >= 1.0)
+        
+    {
+        int somme;
+        somme = 0;
+        for (int count = 0; count<199; count++)
+        {
+            somme = somme + bufferCompPulse[count];
+            
+        }
+        somme = somme / 200;
+        pulseLabel.text=[NSString stringWithFormat:@"%i bpm",somme];
+        [captureSession stopRunning];
+        
+        //   pulseLabel.text=[NSString stringWithFormat:@"Finish"];
+    }
+    //   [self performSelector:@selector(increaseProgressValue) withObject:self afterDelay:0.2];
+    
+    
 }
 
 - (void) viewDidUnload {
@@ -187,7 +233,7 @@
     [captureSession stopRunning];
     self.dataOutput=nil;
     self.captureSession=nil;
- //   [captureSession release];
+    //   [captureSession release];
     
 }
 
@@ -207,36 +253,36 @@
 // force torch
 + (void)setTorchMode:(AVCaptureTorchMode)torchMode forDevice:(AVCaptureDevice *)device
 {
-	if ([device hasFlash] && [device isTorchModeSupported:torchMode])
-	{
-		NSError *error = nil;
-		if ([device lockForConfiguration:&error])
-		{
-			[device setTorchMode:torchMode];
+    if ([device hasFlash] && [device isTorchModeSupported:torchMode])
+    {
+        NSError *error = nil;
+        if ([device lockForConfiguration:&error])
+        {
+            [device setTorchMode:torchMode];
             [device unlockForConfiguration];
-		}
-		else
-		{
-			NSLog(@"%@", error);
-		}
-	}
+        }
+        else
+        {
+            NSLog(@"%@", error);
+        }
+    }
 }
 // force a fixed framerate
 + (void)setFrameRate:(double)frameRate forDevice:(AVCaptureDevice *)device
 {
-		NSError *error = nil;
-		if ([device lockForConfiguration:&error])
-		{
-            // with activeFormat.videoSupportedFrameRateRanges
-            [device setActiveVideoMaxFrameDuration:CMTimeMake(1, frameRate)];
-            [device setActiveVideoMinFrameDuration:CMTimeMake(1, frameRate)];
-            [device unlockForConfiguration];
-		}
-		else
-		{
-			NSLog(@"%@", error);
-		}
-	
+    NSError *error = nil;
+    if ([device lockForConfiguration:&error])
+    {
+        // with activeFormat.videoSupportedFrameRateRanges
+        [device setActiveVideoMaxFrameDuration:CMTimeMake(1, frameRate)];
+        [device setActiveVideoMinFrameDuration:CMTimeMake(1, frameRate)];
+        [device unlockForConfiguration];
+    }
+    else
+    {
+        NSLog(@"%@", error);
+    }
+    
 }
 
 // force focus
@@ -260,8 +306,8 @@
     NSError *error = nil;
     if ([device lockForConfiguration:&error])
     {
-    [ device setExposureModeCustomWithDuration:CMTimeMake(1,30) ISO:92 completionHandler:nil]; // it seems iso can be set from 46 to 736
-    [device unlockForConfiguration];
+        [ device setExposureModeCustomWithDuration:CMTimeMake(1,30) ISO:92 completionHandler:nil]; // it seems iso can be set from 46 to 736
+        [device unlockForConfiguration];
     }
     else
     {
@@ -277,7 +323,7 @@
     {
         if ([device isWhiteBalanceModeSupported:whiteBalanceMode])
         {
-        [device setWhiteBalanceMode:whiteBalanceMode];
+            [device setWhiteBalanceMode:whiteBalanceMode];
         }
         
         else
@@ -299,11 +345,11 @@
 - (IBAction)startRecording:(id)sender {
     
     [self viewWillAppear:NO];
-
-  }
+    
+}
 
 - (IBAction)stopRecording:(id)sender {
-
+    
     self.dataOutput=nil;
     self.captureSession=nil;
     

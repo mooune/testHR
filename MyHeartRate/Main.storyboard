@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qnn-7p-53X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qnn-7p-53X">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -97,16 +97,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newInterface.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-em-dNB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="2" y="7" width="320" height="568"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-xD-eSN" customClass="GraphView">
+                                <rect key="frame" x="-3" y="82" width="325" height="188"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-QG-eHc">
-                                <rect key="frame" x="66" y="337" width="168" height="79"/>
+                                <rect key="frame" x="66" y="342" width="168" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-Ad-WAS">
-                                <rect key="frame" x="222" y="518" width="33" height="30"/>
+                                <rect key="frame" x="222" y="530" width="33" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +120,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-Ku-U6D">
-                                <rect key="frame" x="46" y="518" width="100" height="30"/>
+                                <rect key="frame" x="43" y="530" width="100" height="30"/>
                                 <state key="normal" title="Restart">
                                     <color key="titleColor" red="1" green="0.13027436756040311" blue="0.20534885907570222" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,16 +135,17 @@
                                 <color key="textColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-xD-eSN" customClass="GraphView">
-                                <rect key="frame" x="0.0" y="69" width="325" height="188"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tP-7B-6LD">
+                                <rect key="frame" x="66" y="494" width="189" height="10"/>
+                                <color key="progressTintColor" red="1" green="0.24132940789999999" blue="0.097541540740000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mi2-Cu-SKO"/>
                     <connections>
                         <outlet property="graphView" destination="bcq-xD-eSN" id="2TG-8z-tCd"/>
+                        <outlet property="progressView" destination="9tP-7B-6LD" id="G1H-Ki-Vcf"/>
                         <outlet property="pulseLabel" destination="tGp-QG-eHc" id="Wnw-bq-WoW"/>
                         <outlet property="startButton" destination="LE7-Ku-U6D" id="uTi-Pr-rvw"/>
                         <outlet property="stopButton" destination="5ma-Ad-WAS" id="8ED-4r-lv3"/>

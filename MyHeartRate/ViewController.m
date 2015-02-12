@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Create the data model
+    // pageX.png reprents the page displayed in the tutorial section
     _pageTitles = @[@"", @"", @"", @""]; // page title can be set up here
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     

@@ -2,11 +2,16 @@
 //  HRViewController.m
 //
 //  Created by Alexandre Poisson on 1st june 2014
-//  Copyright (c) 2014, Alexandre Poisson
+//  Edited on 06/02/2015
+//  Copyright (c) 2015, Alexandre Poisson
+//
+//
+
 #import "HRViewController.h"
 #import "GraphView.h"
 #import "getPulseTemporal.h"
 #import "scaledCenteredFiltered.h"
+#import "myPolyDetrend.h"
 
 @interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -77,7 +82,6 @@
     
     [dataOutput setSampleBufferDelegate:self queue:queue];
     
-    
     [captureSession startRunning];
 
 }
@@ -85,7 +89,6 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    // NSLog(@" I am in CaptureOuput");
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
     
@@ -131,10 +134,18 @@
         scaledCenteredFiltered_initialize();
         scaledCenteredFiltered(buffer, scaledBuffer);
         scaledCenteredFiltered_terminate();
-       [graphView displayRythm:scaledBuffer];
+        
+        myPolyDetrend_initialize();
+        myPolyDetrend(scaledBuffer, detrendBuffer);
+        scaledCenteredFiltered_terminate();
 
-        // switch  if the camera is obturated with the finger
-        if (sumY < 50000)  // this value is strongely correlated to the boundaries and increments in the for loops. Todo: find a better alternative
+       [graphView displayRythm:scaledBuffer]; // the detrend buffer gives a strange result when displayed in the graphView
+
+        // check  if the camera is obturated with the finger. if not, put a warning
+         // it is done by analysing the luminance value.
+            //this value is strongely correlated to the boundaries and increments in the for loops.
+            //Todo: find a better alternative
+                if (sumY < 50000)
                 {
                 pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];
                 }
@@ -142,7 +153,7 @@
         else {
             
             getPulseTemporal_initialize();
-            int pulseComp = getPulseTemporal(scaledBuffer,30.00);
+            int pulseComp = getPulseTemporal(detrendBuffer,30.00);
             getPulseTemporal_terminate();
             
             if (pulseComp > 30 && pulseComp < 200)      // getPulse return 0 when the pulse is not computed

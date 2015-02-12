@@ -17,7 +17,8 @@
 @interface HRViewController : UIViewController {
     
     double buffer[160]; //buffer contains more element to have a good signal after low pass filter
-    double scaledBuffer[128];
+    double scaledBuffer[128];  // buffer to store the value
+    double detrendBuffer[128]; // buffer to store the values after the removal of the polynomial trend
     int indexB;
 }
 

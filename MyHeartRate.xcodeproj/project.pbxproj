@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */; };
 		9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A1AC619310E4500F7C9EF /* Main.storyboard */; };
 		9F6C29AC191AC97D00F86238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AB191AC97D00F86238 /* Foundation.framework */; };
 		9F6C29AE191AC97D00F86238 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AD191AC97D00F86238 /* CoreGraphics.framework */; };
@@ -28,6 +27,11 @@
 		9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F91E9DA19522AE70039F7BA /* Images.xcassets */; };
 		9F99956F1A6C145300662BFA /* scaledCenteredFiltered.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F99956D1A6C145300662BFA /* scaledCenteredFiltered.c */; };
 		9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* HRViewController.m */; };
+		9FA58FF01A7D540800B92162 /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FED1A7D540800B92162 /* getPulseTemporal.c */; };
+		9FA58FF31A7D542D00B92162 /* myPolyDetrend.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */; };
+		9FA58FF61A7D55A100B92162 /* rt_nonfinite.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */; };
+		9FA58FFB1A7D55CF00B92162 /* rtGetInf.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF71A7D55CF00B92162 /* rtGetInf.c */; };
+		9FA58FFC1A7D55CF00B92162 /* rtGetNaN.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */; };
 		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
 		9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6D19449565006A90B4 /* PageContentViewController.m */; };
 		9FD7C9091A6AAA09005CD68D /* scaleAndCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */; };
@@ -52,10 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F4DB5DD192BC4E800771AFB /* getPulseTemporal_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getPulseTemporal_types.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal_types.h; sourceTree = "<group>"; };
-		9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getPulseTemporal.c; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal.c; sourceTree = "<group>"; };
-		9F4DB5DF192BC4E800771AFB /* getPulseTemporal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getPulseTemporal.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/getPulseTemporal.h; sourceTree = "<group>"; };
-		9F4DB5E0192BC4E800771AFB /* rtwtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtwtypes.h; path = ../../../MATLAB/HeartRate/codegen/lib/getPulseTemporal/rtwtypes.h; sourceTree = "<group>"; };
 		9F587BBF1930FFBF008F0839 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F587BC01930FFBF008F0839 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F6A1AC619310E4500F7C9EF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +85,19 @@
 		9F99956E1A6C145300662BFA /* scaledCenteredFiltered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered.h; sourceTree = "<group>"; };
 		9F9A63E2193A5F85002A262C /* HRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRViewController.h; sourceTree = "<group>"; };
 		9F9A63E3193A5F85002A262C /* HRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRViewController.m; sourceTree = "<group>"; };
+		9FA58FED1A7D540800B92162 /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getPulseTemporal.c; sourceTree = "<group>"; };
+		9FA58FEE1A7D540800B92162 /* getPulseTemporal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal.h; sourceTree = "<group>"; };
+		9FA58FEF1A7D540800B92162 /* rtwtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtwtypes.h; sourceTree = "<group>"; };
+		9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myPolyDetrend.c; sourceTree = "<group>"; };
+		9FA58FF21A7D542D00B92162 /* myPolyDetrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend.h; sourceTree = "<group>"; };
+		9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rt_nonfinite.c; sourceTree = "<group>"; };
+		9FA58FF51A7D55A100B92162 /* rt_nonfinite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rt_nonfinite.h; sourceTree = "<group>"; };
+		9FA58FF71A7D55CF00B92162 /* rtGetInf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetInf.c; sourceTree = "<group>"; };
+		9FA58FF81A7D55CF00B92162 /* rtGetInf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetInf.h; sourceTree = "<group>"; };
+		9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetNaN.c; sourceTree = "<group>"; };
+		9FA58FFA1A7D55CF00B92162 /* rtGetNaN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetNaN.h; sourceTree = "<group>"; };
+		9FA58FFD1A7D55DF00B92162 /* myPolyDetrend_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend_types.h; sourceTree = "<group>"; };
+		9FA58FFE1A7D55FB00B92162 /* getPulseTemporal_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal_types.h; sourceTree = "<group>"; };
 		9FB31E69194493D6006A90B4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9FB31E6A194493D6006A90B4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9FB31E6C19449565006A90B4 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
@@ -139,13 +152,22 @@
 				9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */,
 				9FD7C90A1A6AAA32005CD68D /* scaleAndCenter_types.h */,
 				9FD7C90B1A6AAA32005CD68D /* scaleAndCenter.h */,
-				9F4DB5DD192BC4E800771AFB /* getPulseTemporal_types.h */,
-				9F4DB5DE192BC4E800771AFB /* getPulseTemporal.c */,
 				9F99956C1A6C145300662BFA /* scaledCenteredFiltered_types.h */,
+				9FA58FED1A7D540800B92162 /* getPulseTemporal.c */,
+				9FA58FF71A7D55CF00B92162 /* rtGetInf.c */,
+				9FA58FF81A7D55CF00B92162 /* rtGetInf.h */,
+				9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */,
+				9FA58FFE1A7D55FB00B92162 /* getPulseTemporal_types.h */,
+				9FA58FFA1A7D55CF00B92162 /* rtGetNaN.h */,
+				9FA58FEE1A7D540800B92162 /* getPulseTemporal.h */,
+				9FA58FEF1A7D540800B92162 /* rtwtypes.h */,
+				9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */,
+				9FA58FFD1A7D55DF00B92162 /* myPolyDetrend_types.h */,
+				9FA58FF51A7D55A100B92162 /* rt_nonfinite.h */,
 				9F99956D1A6C145300662BFA /* scaledCenteredFiltered.c */,
 				9F99956E1A6C145300662BFA /* scaledCenteredFiltered.h */,
-				9F4DB5DF192BC4E800771AFB /* getPulseTemporal.h */,
-				9F4DB5E0192BC4E800771AFB /* rtwtypes.h */,
+				9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */,
+				9FA58FF21A7D542D00B92162 /* myPolyDetrend.h */,
 				9F6C29B1191AC97D00F86238 /* MyHeartRate */,
 				9F6C29D0191AC97D00F86238 /* MyHeartRateTests */,
 				9F6C29AA191AC97D00F86238 /* Frameworks */,
@@ -347,13 +369,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F99956F1A6C145300662BFA /* scaledCenteredFiltered.c in Sources */,
+				9FA58FFC1A7D55CF00B92162 /* rtGetNaN.c in Sources */,
 				9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */,
+				9FA58FF61A7D55A100B92162 /* rt_nonfinite.c in Sources */,
 				9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */,
-				9F4DB5E1192BC4E800771AFB /* getPulseTemporal.c in Sources */,
 				9FF3034D194903D200F68668 /* GraphView.m in Sources */,
+				9FA58FF01A7D540800B92162 /* getPulseTemporal.c in Sources */,
 				9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */,
 				9FD7C9091A6AAA09005CD68D /* scaleAndCenter.c in Sources */,
 				9F6C29BC191AC97D00F86238 /* AppDelegate.m in Sources */,
+				9FA58FF31A7D542D00B92162 /* myPolyDetrend.c in Sources */,
+				9FA58FFB1A7D55CF00B92162 /* rtGetInf.c in Sources */,
 				9F6C29B8191AC97D00F86238 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

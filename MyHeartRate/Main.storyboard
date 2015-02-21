@@ -97,22 +97,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newInterface.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-em-dNB">
-                                <rect key="frame" x="2" y="7" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="25" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-xD-eSN" customClass="GraphView">
-                                <rect key="frame" x="-3" y="82" width="325" height="188"/>
+                                <rect key="frame" x="-3" y="100" width="325" height="188"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-QG-eHc">
-                                <rect key="frame" x="66" y="342" width="168" height="79"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Computing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-QG-eHc">
+                                <rect key="frame" x="65" y="351" width="178" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-Ad-WAS">
-                                <rect key="frame" x="222" y="530" width="33" height="30"/>
+                                <rect key="frame" x="272" y="530" width="33" height="30"/>
                                 <state key="normal" title="Stop">
-                                    <color key="titleColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -120,23 +120,32 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-Ku-U6D">
-                                <rect key="frame" x="43" y="530" width="100" height="30"/>
+                                <rect key="frame" x="16" y="530" width="100" height="30"/>
                                 <state key="normal" title="Restart">
-                                    <color key="titleColor" red="1" green="0.13027436756040311" blue="0.20534885907570222" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startRecording:" destination="07D-4t-dBl" eventType="touchUpInside" id="OLX-0g-x3B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart Rate Calculator - beta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uae-Hh-cW9">
-                                <rect key="frame" x="66" y="35" width="216" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart Rate Calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uae-Hh-cW9">
+                                <rect key="frame" x="77" y="61" width="166" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-LD-0si">
+                                <rect key="frame" x="-3" y="0.0" width="320" height="50"/>
+                            </adBannerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3x-Gg-vqh">
+                                <rect key="frame" x="106" y="504" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tP-7B-6LD">
-                                <rect key="frame" x="66" y="494" width="189" height="10"/>
+                                <rect key="frame" x="183" y="514" width="88" height="2"/>
                                 <color key="progressTintColor" red="1" green="0.24132940789999999" blue="0.097541540740000002" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                         </subviews>
@@ -145,6 +154,7 @@
                     <navigationItem key="navigationItem" id="mi2-Cu-SKO"/>
                     <connections>
                         <outlet property="graphView" destination="bcq-xD-eSN" id="2TG-8z-tCd"/>
+                        <outlet property="progressLabel" destination="C3x-Gg-vqh" id="a6l-Gk-Hd3"/>
                         <outlet property="progressView" destination="9tP-7B-6LD" id="G1H-Ki-Vcf"/>
                         <outlet property="pulseLabel" destination="tGp-QG-eHc" id="Wnw-bq-WoW"/>
                         <outlet property="startButton" destination="LE7-Ku-U6D" id="uTi-Pr-rvw"/>

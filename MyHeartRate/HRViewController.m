@@ -36,6 +36,8 @@
 @synthesize pulseLabel;
 @synthesize graphView;
 @synthesize progressView;
+@synthesize progressLabel;
+
 @synthesize progressValue;
 
 
@@ -44,8 +46,12 @@
 {
     [super viewDidLoad];
     [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
+    progressLabel.text=[NSString stringWithFormat:@"0 %%"];
+    pulseLabel.text=[NSString stringWithFormat:@""];
 
 }
+
+
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -158,7 +164,8 @@
         }
         
         else {
-            
+            pulseLabel.text=[NSString stringWithFormat:@"Keep your Finger"];
+
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(detrendBuffer,30.00);
             getPulseTemporal_terminate();
@@ -170,7 +177,6 @@
                 [graphView addToPulseBuffer:pulseComp :graphView.indexB];
                 
                 graphView.indexB = graphView.indexB +1;
-                pulseLabel.text=[NSString stringWithFormat:@"Computing Pulse..."];
                 // pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
                 // NSLog(@" pulseDisplayed %i",pulseComp);
                 [self addToCompPulseBuffer:pulseComp :nCompPulse];
@@ -204,7 +210,7 @@
     progressValue = progressValue + 0.005;
     
     progressView.progress = progressValue;
-    
+    progressLabel.text=[NSString stringWithFormat:@"%.f %%",100*progressValue];
     if (progressValue >= 1.0)
         
     {

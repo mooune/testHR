@@ -31,6 +31,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *pulseLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @property (nonatomic) float progressValue;
 

@@ -34,6 +34,7 @@
 		9FA58FFC1A7D55CF00B92162 /* rtGetNaN.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */; };
 		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
 		9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6D19449565006A90B4 /* PageContentViewController.m */; };
+		9FD590481A98BF1800C136E1 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD590471A98BF1800C136E1 /* iAd.framework */; };
 		9FD7C9091A6AAA09005CD68D /* scaleAndCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */; };
 		9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033B1948EBF800F68668 /* Default-568h@2x.png */; };
 		9FF3033E1948EE1800F68668 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033D1948EE1800F68668 /* page2.png */; };
@@ -102,6 +103,7 @@
 		9FB31E6A194493D6006A90B4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9FB31E6C19449565006A90B4 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		9FB31E6D19449565006A90B4 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		9FD590471A98BF1800C136E1 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaleAndCenter.c; sourceTree = "<group>"; };
 		9FD7C90A1A6AAA32005CD68D /* scaleAndCenter_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaleAndCenter_types.h; sourceTree = "<group>"; };
 		9FD7C90B1A6AAA32005CD68D /* scaleAndCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaleAndCenter.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD590481A98BF1800C136E1 /* iAd.framework in Frameworks */,
 				9F6C29FA191ACB2A00F86238 /* QuartzCore.framework in Frameworks */,
 				9F6C29F8191ACB1D00F86238 /* CoreVideo.framework in Frameworks */,
 				9F6C29F6191ACB0C00F86238 /* AVFoundation.framework in Frameworks */,
@@ -187,6 +190,7 @@
 		9F6C29AA191AC97D00F86238 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FD590471A98BF1800C136E1 /* iAd.framework */,
 				9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */,
 				9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */,
 				9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */,
@@ -456,9 +460,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos8.1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -488,8 +493,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos8.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -505,8 +511,10 @@
 				GCC_PREFIX_HEADER = "MyHeartRate/MyHeartRate-Prefix.pch";
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -522,8 +530,10 @@
 				GCC_PREFIX_HEADER = "MyHeartRate/MyHeartRate-Prefix.pch";
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

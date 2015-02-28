@@ -1,12 +1,12 @@
 /*
- * File: getPulseTemporal.h
+ * File: eml_sort.h
  *
  * MATLAB Coder version            : 2.7
  * C/C++ source code generated on  : 28-Feb-2015 08:38:36
  */
 
-#ifndef __GETPULSETEMPORAL_H__
-#define __GETPULSETEMPORAL_H__
+#ifndef __EML_SORT_H__
+#define __EML_SORT_H__
 
 /* Include Files */
 #include <math.h>
@@ -18,13 +18,15 @@
 #include "getPulseTemporal_types.h"
 
 /* Function Declarations */
-extern unsigned char getPulseTemporal(const double inputBuffer[128], double
-  frameRate);
+extern void c_eml_sort(const double x_data[], const int x_size[1], double
+  y_data[], int y_size[1]);
+extern void eml_sort(const double x_data[], const int x_size[1], double y_data[],
+                     int y_size[1], int idx_data[], int idx_size[1]);
 
 #endif
 
 /*
- * File trailer for getPulseTemporal.h
+ * File trailer for eml_sort.h
  *
  * [EOF]
  */

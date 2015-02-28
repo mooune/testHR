@@ -1,17 +1,28 @@
 //
-//  HRViewController.m
+//  HRViewController.h
 //
 //  Created by Alexandre Poisson on 1st june 2014
-//  Edited on 06/02/2015
+//  Edited on 28/02/2015
 //  Copyright (c) 2015, Alexandre Poisson
 //
-//
+//  This view controller can be considered as the main controller
+//  It creates the capture session
+//  send buffer to being displayed
+//  ...
+
+
 
 #import "HRViewController.h"
 #import "GraphView.h"
 #import "getPulseTemporal.h"
 #import "scaledCenteredFiltered.h"
 #import "myPolyDetrend.h"
+#import "scaledCenteredFiltered_initialize.h"
+#import "scaledCenteredFiltered_terminate.h"
+#import "myPolyDetrend_initialize.h"
+#import "myPolyDetrend_terminate.h"
+#import "getPulseTemporal_initialize.h"
+#import "getPulseTemporal_terminate.h"
 
 @interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 

@@ -2,7 +2,7 @@
  * File: scaledCenteredFiltered_types.h 
  *  
  * MATLAB Coder version            : 2.7 
- * C/C++ source code generated on  : 18-Jan-2015 09:34:55 
+ * C/C++ source code generated on  : 28-Feb-2015 08:39:25 
  */
 
 #ifndef __SCALEDCENTEREDFILTERED_TYPES_H__

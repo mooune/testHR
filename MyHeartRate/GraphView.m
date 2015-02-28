@@ -1,7 +1,12 @@
-/*
- File: GraphView.m
- Abstract: A custom view for plotting a vector given in argument of displayRythm
- */
+//
+//  Graphview.m
+//
+//  Created by Alexandre Poisson on 1st june 2014
+//  Edited on 28/02/2015
+//  Copyright (c) 2015, Alexandre Poisson
+//
+//
+// A custom view for plotting a vector given in argument of displayRythm
 
 #import "GraphView.h"
 #import "HRViewController.h"

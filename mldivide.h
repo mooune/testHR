@@ -1,12 +1,12 @@
 /*
- * File: myPolyDetrend.h
+ * File: mldivide.h
  *
  * MATLAB Coder version            : 2.7
  * C/C++ source code generated on  : 28-Feb-2015 08:40:21
  */
 
-#ifndef __MYPOLYDETREND_H__
-#define __MYPOLYDETREND_H__
+#ifndef __MLDIVIDE_H__
+#define __MLDIVIDE_H__
 
 /* Include Files */
 #include <math.h>
@@ -18,12 +18,12 @@
 #include "myPolyDetrend_types.h"
 
 /* Function Declarations */
-extern void myPolyDetrend(const double y[128], double r[128]);
+extern void mldivide(const double A[36], double B[6]);
 
 #endif
 
 /*
- * File trailer for myPolyDetrend.h
+ * File trailer for mldivide.h
  *
  * [EOF]
  */

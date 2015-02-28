@@ -1,12 +1,12 @@
 /*
- * File: scaledCenteredFiltered.h
+ * File: scaledCenteredFiltered_initialize.h
  *
  * MATLAB Coder version            : 2.7
  * C/C++ source code generated on  : 28-Feb-2015 08:39:25
  */
 
-#ifndef __SCALEDCENTEREDFILTERED_H__
-#define __SCALEDCENTEREDFILTERED_H__
+#ifndef __SCALEDCENTEREDFILTERED_INITIALIZE_H__
+#define __SCALEDCENTEREDFILTERED_INITIALIZE_H__
 
 /* Include Files */
 #include <stddef.h>
@@ -17,13 +17,12 @@
 #include "scaledCenteredFiltered_types.h"
 
 /* Function Declarations */
-extern void scaledCenteredFiltered(const double datas[160], double
-  b_scaledCenteredFiltered[128]);
+extern void scaledCenteredFiltered_initialize(void);
 
 #endif
 
 /*
- * File trailer for scaledCenteredFiltered.h
+ * File trailer for scaledCenteredFiltered_initialize.h
  *
  * [EOF]
  */

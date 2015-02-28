@@ -1,9 +1,17 @@
 //
-//  ViewController.h
+//  HRViewController.h
 //
 //  Created by Alexandre Poisson on 1st june 2014
-//  Copyright (c) 2014, Alexandre Poisson
+//  Edited on 28/02/2015
+//  Copyright (c) 2015, Alexandre Poisson
 //
+//  This view controller can be considered as the main controller
+//  It creates the capture session
+//  send buffer to being displayed
+//  ...
+
+
+
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>

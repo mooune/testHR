@@ -2,7 +2,7 @@
  * File: getPulseTemporal_types.h 
  *  
  * MATLAB Coder version            : 2.7 
- * C/C++ source code generated on  : 31-Jan-2015 18:42:34 
+ * C/C++ source code generated on  : 28-Feb-2015 08:38:36 
  */
 
 #ifndef __GETPULSETEMPORAL_TYPES_H__

@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F128BFE1AA1ADAF00FE845B /* diff.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BE21AA1ADAF00FE845B /* diff.c */; };
+		9F128BFF1AA1ADAF00FE845B /* eml_setop.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BE41AA1ADAF00FE845B /* eml_setop.c */; };
+		9F128C001AA1ADAF00FE845B /* eml_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BE61AA1ADAF00FE845B /* eml_sort.c */; };
+		9F128C011AA1ADAF00FE845B /* findpeaks.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BE81AA1ADAF00FE845B /* findpeaks.c */; };
+		9F128C021AA1ADAF00FE845B /* getPulseTemporal_initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BEA1AA1ADAF00FE845B /* getPulseTemporal_initialize.c */; };
+		9F128C031AA1ADAF00FE845B /* getPulseTemporal_terminate.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BEC1AA1ADAF00FE845B /* getPulseTemporal_terminate.c */; };
+		9F128C041AA1ADAF00FE845B /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BEF1AA1ADAF00FE845B /* getPulseTemporal.c */; };
+		9F128C051AA1ADAF00FE845B /* mean.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BF11AA1ADAF00FE845B /* mean.c */; };
+		9F128C061AA1ADAF00FE845B /* rt_nonfinite.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BF31AA1ADAF00FE845B /* rt_nonfinite.c */; };
+		9F128C071AA1ADAF00FE845B /* rtGetInf.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BF51AA1ADAF00FE845B /* rtGetInf.c */; };
+		9F128C081AA1ADAF00FE845B /* rtGetNaN.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BF71AA1ADAF00FE845B /* rtGetNaN.c */; };
+		9F128C091AA1ADAF00FE845B /* sign.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BFA1AA1ADAF00FE845B /* sign.c */; };
+		9F128C0A1AA1ADAF00FE845B /* var.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128BFC1AA1ADAF00FE845B /* var.c */; };
+		9F128C191AA1ADCA00FE845B /* mldivide.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C0B1AA1ADCA00FE845B /* mldivide.c */; };
+		9F128C1A1AA1ADCA00FE845B /* myPolyDetrend_initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C0D1AA1ADCA00FE845B /* myPolyDetrend_initialize.c */; };
+		9F128C1E1AA1ADCA00FE845B /* myPolyDetrend_terminate.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C121AA1ADCA00FE845B /* myPolyDetrend_terminate.c */; };
+		9F128C1F1AA1ADCA00FE845B /* myPolyDetrend.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C151AA1ADCA00FE845B /* myPolyDetrend.c */; };
+		9F128C201AA1ADCA00FE845B /* qr.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C171AA1ADCA00FE845B /* qr.c */; };
+		9F128C2B1AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C211AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.c */; };
+		9F128C2C1AA1ADDD00FE845B /* scaledCenteredFiltered_ref.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 9F128C231AA1ADDD00FE845B /* scaledCenteredFiltered_ref.rsp */; };
+		9F128C2D1AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.bat in Resources */ = {isa = PBXBuildFile; fileRef = 9F128C241AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.bat */; };
+		9F128C2E1AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.mk in Resources */ = {isa = PBXBuildFile; fileRef = 9F128C251AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.mk */; };
+		9F128C2F1AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C261AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.c */; };
+		9F128C301AA1ADDD00FE845B /* scaledCenteredFiltered.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F128C291AA1ADDD00FE845B /* scaledCenteredFiltered.c */; };
 		9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A1AC619310E4500F7C9EF /* Main.storyboard */; };
 		9F6C29AC191AC97D00F86238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AB191AC97D00F86238 /* Foundation.framework */; };
 		9F6C29AE191AC97D00F86238 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29AD191AC97D00F86238 /* CoreGraphics.framework */; };
@@ -24,24 +48,16 @@
 		9F6C29F6191ACB0C00F86238 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */; };
 		9F6C29F8191ACB1D00F86238 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */; };
 		9F6C29FA191ACB2A00F86238 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */; };
+		9F9197D21AA1B5A500D33587 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F9197D11AA1B5A500D33587 /* Default-568h@2x.png */; };
 		9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F91E9DA19522AE70039F7BA /* Images.xcassets */; };
-		9F99956F1A6C145300662BFA /* scaledCenteredFiltered.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F99956D1A6C145300662BFA /* scaledCenteredFiltered.c */; };
 		9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A63E3193A5F85002A262C /* HRViewController.m */; };
-		9FA58FF01A7D540800B92162 /* getPulseTemporal.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FED1A7D540800B92162 /* getPulseTemporal.c */; };
-		9FA58FF31A7D542D00B92162 /* myPolyDetrend.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */; };
-		9FA58FF61A7D55A100B92162 /* rt_nonfinite.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */; };
-		9FA58FFB1A7D55CF00B92162 /* rtGetInf.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF71A7D55CF00B92162 /* rtGetInf.c */; };
-		9FA58FFC1A7D55CF00B92162 /* rtGetNaN.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */; };
 		9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6A194493D6006A90B4 /* ViewController.m */; };
 		9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB31E6D19449565006A90B4 /* PageContentViewController.m */; };
 		9FD590481A98BF1800C136E1 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD590471A98BF1800C136E1 /* iAd.framework */; };
-		9FD7C9091A6AAA09005CD68D /* scaleAndCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */; };
-		9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033B1948EBF800F68668 /* Default-568h@2x.png */; };
 		9FF3033E1948EE1800F68668 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033D1948EE1800F68668 /* page2.png */; };
 		9FF303401948EE1E00F68668 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF3033F1948EE1E00F68668 /* page3.png */; };
 		9FF303421948EE2600F68668 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303411948EE2600F68668 /* page1.png */; };
 		9FF303441948EF3000F68668 /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303431948EF3000F68668 /* page4.png */; };
-		9FF303481948F21200F68668 /* Icone60x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303471948F21200F68668 /* Icone60x2.png */; };
 		9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF303491948FA6F00F68668 /* newInterface.png */; };
 		9FF3034D194903D200F68668 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3034C194903D200F68668 /* GraphView.m */; };
 /* End PBXBuildFile section */
@@ -57,6 +73,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F128BE21AA1ADAF00FE845B /* diff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = diff.c; sourceTree = "<group>"; };
+		9F128BE31AA1ADAF00FE845B /* diff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = diff.h; sourceTree = "<group>"; };
+		9F128BE41AA1ADAF00FE845B /* eml_setop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = eml_setop.c; sourceTree = "<group>"; };
+		9F128BE51AA1ADAF00FE845B /* eml_setop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eml_setop.h; sourceTree = "<group>"; };
+		9F128BE61AA1ADAF00FE845B /* eml_sort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = eml_sort.c; sourceTree = "<group>"; };
+		9F128BE71AA1ADAF00FE845B /* eml_sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eml_sort.h; sourceTree = "<group>"; };
+		9F128BE81AA1ADAF00FE845B /* findpeaks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = findpeaks.c; sourceTree = "<group>"; };
+		9F128BE91AA1ADAF00FE845B /* findpeaks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findpeaks.h; sourceTree = "<group>"; };
+		9F128BEA1AA1ADAF00FE845B /* getPulseTemporal_initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getPulseTemporal_initialize.c; sourceTree = "<group>"; };
+		9F128BEB1AA1ADAF00FE845B /* getPulseTemporal_initialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal_initialize.h; sourceTree = "<group>"; };
+		9F128BEC1AA1ADAF00FE845B /* getPulseTemporal_terminate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getPulseTemporal_terminate.c; sourceTree = "<group>"; };
+		9F128BED1AA1ADAF00FE845B /* getPulseTemporal_terminate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal_terminate.h; sourceTree = "<group>"; };
+		9F128BEE1AA1ADAF00FE845B /* getPulseTemporal_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal_types.h; sourceTree = "<group>"; };
+		9F128BEF1AA1ADAF00FE845B /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getPulseTemporal.c; sourceTree = "<group>"; };
+		9F128BF01AA1ADAF00FE845B /* getPulseTemporal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal.h; sourceTree = "<group>"; };
+		9F128BF11AA1ADAF00FE845B /* mean.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mean.c; sourceTree = "<group>"; };
+		9F128BF21AA1ADAF00FE845B /* mean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mean.h; sourceTree = "<group>"; };
+		9F128BF31AA1ADAF00FE845B /* rt_nonfinite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rt_nonfinite.c; sourceTree = "<group>"; };
+		9F128BF41AA1ADAF00FE845B /* rt_nonfinite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rt_nonfinite.h; sourceTree = "<group>"; };
+		9F128BF51AA1ADAF00FE845B /* rtGetInf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetInf.c; sourceTree = "<group>"; };
+		9F128BF61AA1ADAF00FE845B /* rtGetInf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetInf.h; sourceTree = "<group>"; };
+		9F128BF71AA1ADAF00FE845B /* rtGetNaN.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetNaN.c; sourceTree = "<group>"; };
+		9F128BF81AA1ADAF00FE845B /* rtGetNaN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetNaN.h; sourceTree = "<group>"; };
+		9F128BF91AA1ADAF00FE845B /* rtwtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtwtypes.h; sourceTree = "<group>"; };
+		9F128BFA1AA1ADAF00FE845B /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
+		9F128BFB1AA1ADAF00FE845B /* sign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sign.h; sourceTree = "<group>"; };
+		9F128BFC1AA1ADAF00FE845B /* var.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = var.c; sourceTree = "<group>"; };
+		9F128BFD1AA1ADAF00FE845B /* var.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = var.h; sourceTree = "<group>"; };
+		9F128C0B1AA1ADCA00FE845B /* mldivide.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mldivide.c; sourceTree = "<group>"; };
+		9F128C0C1AA1ADCA00FE845B /* mldivide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mldivide.h; sourceTree = "<group>"; };
+		9F128C0D1AA1ADCA00FE845B /* myPolyDetrend_initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myPolyDetrend_initialize.c; sourceTree = "<group>"; };
+		9F128C0E1AA1ADCA00FE845B /* myPolyDetrend_initialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend_initialize.h; sourceTree = "<group>"; };
+		9F128C121AA1ADCA00FE845B /* myPolyDetrend_terminate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myPolyDetrend_terminate.c; sourceTree = "<group>"; };
+		9F128C131AA1ADCA00FE845B /* myPolyDetrend_terminate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend_terminate.h; sourceTree = "<group>"; };
+		9F128C141AA1ADCA00FE845B /* myPolyDetrend_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend_types.h; sourceTree = "<group>"; };
+		9F128C151AA1ADCA00FE845B /* myPolyDetrend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myPolyDetrend.c; sourceTree = "<group>"; };
+		9F128C161AA1ADCA00FE845B /* myPolyDetrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend.h; sourceTree = "<group>"; };
+		9F128C171AA1ADCA00FE845B /* qr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qr.c; sourceTree = "<group>"; };
+		9F128C181AA1ADCA00FE845B /* qr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qr.h; sourceTree = "<group>"; };
+		9F128C211AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaledCenteredFiltered_initialize.c; sourceTree = "<group>"; };
+		9F128C221AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered_initialize.h; sourceTree = "<group>"; };
+		9F128C231AA1ADDD00FE845B /* scaledCenteredFiltered_ref.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scaledCenteredFiltered_ref.rsp; sourceTree = "<group>"; };
+		9F128C241AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scaledCenteredFiltered_rtw.bat; sourceTree = "<group>"; };
+		9F128C251AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scaledCenteredFiltered_rtw.mk; sourceTree = "<group>"; };
+		9F128C261AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaledCenteredFiltered_terminate.c; sourceTree = "<group>"; };
+		9F128C271AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered_terminate.h; sourceTree = "<group>"; };
+		9F128C281AA1ADDD00FE845B /* scaledCenteredFiltered_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered_types.h; sourceTree = "<group>"; };
+		9F128C291AA1ADDD00FE845B /* scaledCenteredFiltered.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaledCenteredFiltered.c; sourceTree = "<group>"; };
+		9F128C2A1AA1ADDD00FE845B /* scaledCenteredFiltered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered.h; sourceTree = "<group>"; };
 		9F587BBF1930FFBF008F0839 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F587BC01930FFBF008F0839 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F6A1AC619310E4500F7C9EF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -80,39 +145,19 @@
 		9F6C29F5191ACB0C00F86238 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9F6C29F7191ACB1D00F86238 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		9F6C29F9191ACB2A00F86238 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9F9197D11AA1B5A500D33587 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9F91E9DA19522AE70039F7BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9F99956C1A6C145300662BFA /* scaledCenteredFiltered_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered_types.h; sourceTree = "<group>"; };
-		9F99956D1A6C145300662BFA /* scaledCenteredFiltered.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaledCenteredFiltered.c; sourceTree = "<group>"; };
-		9F99956E1A6C145300662BFA /* scaledCenteredFiltered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaledCenteredFiltered.h; sourceTree = "<group>"; };
 		9F9A63E2193A5F85002A262C /* HRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRViewController.h; sourceTree = "<group>"; };
 		9F9A63E3193A5F85002A262C /* HRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRViewController.m; sourceTree = "<group>"; };
-		9FA58FED1A7D540800B92162 /* getPulseTemporal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getPulseTemporal.c; sourceTree = "<group>"; };
-		9FA58FEE1A7D540800B92162 /* getPulseTemporal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal.h; sourceTree = "<group>"; };
-		9FA58FEF1A7D540800B92162 /* rtwtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtwtypes.h; sourceTree = "<group>"; };
-		9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myPolyDetrend.c; sourceTree = "<group>"; };
-		9FA58FF21A7D542D00B92162 /* myPolyDetrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend.h; sourceTree = "<group>"; };
-		9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rt_nonfinite.c; sourceTree = "<group>"; };
-		9FA58FF51A7D55A100B92162 /* rt_nonfinite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rt_nonfinite.h; sourceTree = "<group>"; };
-		9FA58FF71A7D55CF00B92162 /* rtGetInf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetInf.c; sourceTree = "<group>"; };
-		9FA58FF81A7D55CF00B92162 /* rtGetInf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetInf.h; sourceTree = "<group>"; };
-		9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtGetNaN.c; sourceTree = "<group>"; };
-		9FA58FFA1A7D55CF00B92162 /* rtGetNaN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtGetNaN.h; sourceTree = "<group>"; };
-		9FA58FFD1A7D55DF00B92162 /* myPolyDetrend_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myPolyDetrend_types.h; sourceTree = "<group>"; };
-		9FA58FFE1A7D55FB00B92162 /* getPulseTemporal_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getPulseTemporal_types.h; sourceTree = "<group>"; };
 		9FB31E69194493D6006A90B4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9FB31E6A194493D6006A90B4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9FB31E6C19449565006A90B4 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		9FB31E6D19449565006A90B4 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		9FD590471A98BF1800C136E1 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scaleAndCenter.c; sourceTree = "<group>"; };
-		9FD7C90A1A6AAA32005CD68D /* scaleAndCenter_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaleAndCenter_types.h; sourceTree = "<group>"; };
-		9FD7C90B1A6AAA32005CD68D /* scaleAndCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaleAndCenter.h; sourceTree = "<group>"; };
-		9FF3033B1948EBF800F68668 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "MyHeartRate/Default-568h@2x.png"; sourceTree = "<group>"; };
 		9FF3033D1948EE1800F68668 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		9FF3033F1948EE1E00F68668 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
 		9FF303411948EE2600F68668 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		9FF303431948EF3000F68668 /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
-		9FF303471948F21200F68668 /* Icone60x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icone60x2.png; sourceTree = "<group>"; };
 		9FF303491948FA6F00F68668 /* newInterface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newInterface.png; sourceTree = "<group>"; };
 		9FF3034B194903D200F68668 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		9FF3034C194903D200F68668 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
@@ -151,26 +196,8 @@
 		9F6C299F191AC97D00F86238 = {
 			isa = PBXGroup;
 			children = (
-				9FF3033B1948EBF800F68668 /* Default-568h@2x.png */,
-				9FD7C9081A6AAA09005CD68D /* scaleAndCenter.c */,
-				9FD7C90A1A6AAA32005CD68D /* scaleAndCenter_types.h */,
-				9FD7C90B1A6AAA32005CD68D /* scaleAndCenter.h */,
-				9F99956C1A6C145300662BFA /* scaledCenteredFiltered_types.h */,
-				9FA58FED1A7D540800B92162 /* getPulseTemporal.c */,
-				9FA58FF71A7D55CF00B92162 /* rtGetInf.c */,
-				9FA58FF81A7D55CF00B92162 /* rtGetInf.h */,
-				9FA58FF91A7D55CF00B92162 /* rtGetNaN.c */,
-				9FA58FFE1A7D55FB00B92162 /* getPulseTemporal_types.h */,
-				9FA58FFA1A7D55CF00B92162 /* rtGetNaN.h */,
-				9FA58FEE1A7D540800B92162 /* getPulseTemporal.h */,
-				9FA58FEF1A7D540800B92162 /* rtwtypes.h */,
-				9FA58FF41A7D55A100B92162 /* rt_nonfinite.c */,
-				9FA58FFD1A7D55DF00B92162 /* myPolyDetrend_types.h */,
-				9FA58FF51A7D55A100B92162 /* rt_nonfinite.h */,
-				9F99956D1A6C145300662BFA /* scaledCenteredFiltered.c */,
-				9F99956E1A6C145300662BFA /* scaledCenteredFiltered.h */,
-				9FA58FF11A7D542D00B92162 /* myPolyDetrend.c */,
-				9FA58FF21A7D542D00B92162 /* myPolyDetrend.h */,
+				9F9197D11AA1B5A500D33587 /* Default-568h@2x.png */,
+				9F86185D1AA1ABE9008BF453 /* MATLABCCode */,
 				9F6C29B1191AC97D00F86238 /* MyHeartRate */,
 				9F6C29D0191AC97D00F86238 /* MyHeartRateTests */,
 				9F6C29AA191AC97D00F86238 /* Frameworks */,
@@ -219,7 +246,6 @@
 				9FF3033D1948EE1800F68668 /* page2.png */,
 				9FF3033F1948EE1E00F68668 /* page3.png */,
 				9FF303431948EF3000F68668 /* page4.png */,
-				9FF303471948F21200F68668 /* Icone60x2.png */,
 				9FF303491948FA6F00F68668 /* newInterface.png */,
 				9F91E9DA19522AE70039F7BA /* Images.xcassets */,
 				9F6C29B2191AC97D00F86238 /* Supporting Files */,
@@ -257,6 +283,62 @@
 				9F6C29D3191AC97D00F86238 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F86185D1AA1ABE9008BF453 /* MATLABCCode */ = {
+			isa = PBXGroup;
+			children = (
+				9F128C211AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.c */,
+				9F128C221AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.h */,
+				9F128C231AA1ADDD00FE845B /* scaledCenteredFiltered_ref.rsp */,
+				9F128C241AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.bat */,
+				9F128C251AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.mk */,
+				9F128C261AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.c */,
+				9F128C271AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.h */,
+				9F128C281AA1ADDD00FE845B /* scaledCenteredFiltered_types.h */,
+				9F128C291AA1ADDD00FE845B /* scaledCenteredFiltered.c */,
+				9F128C2A1AA1ADDD00FE845B /* scaledCenteredFiltered.h */,
+				9F128C0B1AA1ADCA00FE845B /* mldivide.c */,
+				9F128C0C1AA1ADCA00FE845B /* mldivide.h */,
+				9F128C0D1AA1ADCA00FE845B /* myPolyDetrend_initialize.c */,
+				9F128C0E1AA1ADCA00FE845B /* myPolyDetrend_initialize.h */,
+				9F128C121AA1ADCA00FE845B /* myPolyDetrend_terminate.c */,
+				9F128C131AA1ADCA00FE845B /* myPolyDetrend_terminate.h */,
+				9F128C141AA1ADCA00FE845B /* myPolyDetrend_types.h */,
+				9F128C151AA1ADCA00FE845B /* myPolyDetrend.c */,
+				9F128C161AA1ADCA00FE845B /* myPolyDetrend.h */,
+				9F128C171AA1ADCA00FE845B /* qr.c */,
+				9F128C181AA1ADCA00FE845B /* qr.h */,
+				9F128BE21AA1ADAF00FE845B /* diff.c */,
+				9F128BE31AA1ADAF00FE845B /* diff.h */,
+				9F128BE41AA1ADAF00FE845B /* eml_setop.c */,
+				9F128BE51AA1ADAF00FE845B /* eml_setop.h */,
+				9F128BE61AA1ADAF00FE845B /* eml_sort.c */,
+				9F128BE71AA1ADAF00FE845B /* eml_sort.h */,
+				9F128BE81AA1ADAF00FE845B /* findpeaks.c */,
+				9F128BE91AA1ADAF00FE845B /* findpeaks.h */,
+				9F128BEA1AA1ADAF00FE845B /* getPulseTemporal_initialize.c */,
+				9F128BEB1AA1ADAF00FE845B /* getPulseTemporal_initialize.h */,
+				9F128BEC1AA1ADAF00FE845B /* getPulseTemporal_terminate.c */,
+				9F128BED1AA1ADAF00FE845B /* getPulseTemporal_terminate.h */,
+				9F128BEE1AA1ADAF00FE845B /* getPulseTemporal_types.h */,
+				9F128BEF1AA1ADAF00FE845B /* getPulseTemporal.c */,
+				9F128BF01AA1ADAF00FE845B /* getPulseTemporal.h */,
+				9F128BF11AA1ADAF00FE845B /* mean.c */,
+				9F128BF21AA1ADAF00FE845B /* mean.h */,
+				9F128BF31AA1ADAF00FE845B /* rt_nonfinite.c */,
+				9F128BF41AA1ADAF00FE845B /* rt_nonfinite.h */,
+				9F128BF51AA1ADAF00FE845B /* rtGetInf.c */,
+				9F128BF61AA1ADAF00FE845B /* rtGetInf.h */,
+				9F128BF71AA1ADAF00FE845B /* rtGetNaN.c */,
+				9F128BF81AA1ADAF00FE845B /* rtGetNaN.h */,
+				9F128BF91AA1ADAF00FE845B /* rtwtypes.h */,
+				9F128BFA1AA1ADAF00FE845B /* sign.c */,
+				9F128BFB1AA1ADAF00FE845B /* sign.h */,
+				9F128BFC1AA1ADAF00FE845B /* var.c */,
+				9F128BFD1AA1ADAF00FE845B /* var.h */,
+			);
+			name = MATLABCCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +385,7 @@
 		9F6C29A0191AC97D00F86238 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Alexandre Poisson";
 				TargetAttributes = {
 					9F6C29A7191AC97D00F86238 = {
@@ -345,14 +427,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF303441948EF3000F68668 /* page4.png in Resources */,
-				9FF3033C1948EBF800F68668 /* Default-568h@2x.png in Resources */,
+				9F128C2C1AA1ADDD00FE845B /* scaledCenteredFiltered_ref.rsp in Resources */,
 				9FF3033E1948EE1800F68668 /* page2.png in Resources */,
+				9F128C2D1AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.bat in Resources */,
 				9F6C29B6191AC97D00F86238 /* InfoPlist.strings in Resources */,
+				9F9197D21AA1B5A500D33587 /* Default-568h@2x.png in Resources */,
+				9F128C2E1AA1ADDD00FE845B /* scaledCenteredFiltered_rtw.mk in Resources */,
 				9F91E9DB19522AE70039F7BA /* Images.xcassets in Resources */,
 				9FF303401948EE1E00F68668 /* page3.png in Resources */,
 				9FF303421948EE2600F68668 /* page1.png in Resources */,
 				9F6A1AC719310E4500F7C9EF /* Main.storyboard in Resources */,
-				9FF303481948F21200F68668 /* Icone60x2.png in Resources */,
 				9FF3034A1948FA6F00F68668 /* newInterface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,19 +456,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F99956F1A6C145300662BFA /* scaledCenteredFiltered.c in Sources */,
-				9FA58FFC1A7D55CF00B92162 /* rtGetNaN.c in Sources */,
+				9F128C201AA1ADCA00FE845B /* qr.c in Sources */,
+				9F128C1F1AA1ADCA00FE845B /* myPolyDetrend.c in Sources */,
+				9F128C2F1AA1ADDD00FE845B /* scaledCenteredFiltered_terminate.c in Sources */,
 				9FB31E6B194493D6006A90B4 /* ViewController.m in Sources */,
-				9FA58FF61A7D55A100B92162 /* rt_nonfinite.c in Sources */,
+				9F128C191AA1ADCA00FE845B /* mldivide.c in Sources */,
+				9F128C1E1AA1ADCA00FE845B /* myPolyDetrend_terminate.c in Sources */,
+				9F128C011AA1ADAF00FE845B /* findpeaks.c in Sources */,
+				9F128C1A1AA1ADCA00FE845B /* myPolyDetrend_initialize.c in Sources */,
+				9F128C031AA1ADAF00FE845B /* getPulseTemporal_terminate.c in Sources */,
+				9F128C001AA1ADAF00FE845B /* eml_sort.c in Sources */,
+				9F128C2B1AA1ADDD00FE845B /* scaledCenteredFiltered_initialize.c in Sources */,
 				9F9A63E4193A5F85002A262C /* HRViewController.m in Sources */,
+				9F128C0A1AA1ADAF00FE845B /* var.c in Sources */,
 				9FF3034D194903D200F68668 /* GraphView.m in Sources */,
-				9FA58FF01A7D540800B92162 /* getPulseTemporal.c in Sources */,
+				9F128BFE1AA1ADAF00FE845B /* diff.c in Sources */,
+				9F128BFF1AA1ADAF00FE845B /* eml_setop.c in Sources */,
 				9FB31E6E19449565006A90B4 /* PageContentViewController.m in Sources */,
-				9FD7C9091A6AAA09005CD68D /* scaleAndCenter.c in Sources */,
+				9F128C021AA1ADAF00FE845B /* getPulseTemporal_initialize.c in Sources */,
+				9F128C301AA1ADDD00FE845B /* scaledCenteredFiltered.c in Sources */,
+				9F128C081AA1ADAF00FE845B /* rtGetNaN.c in Sources */,
+				9F128C051AA1ADAF00FE845B /* mean.c in Sources */,
+				9F128C061AA1ADAF00FE845B /* rt_nonfinite.c in Sources */,
 				9F6C29BC191AC97D00F86238 /* AppDelegate.m in Sources */,
-				9FA58FF31A7D542D00B92162 /* myPolyDetrend.c in Sources */,
-				9FA58FFB1A7D55CF00B92162 /* rtGetInf.c in Sources */,
 				9F6C29B8191AC97D00F86238 /* main.m in Sources */,
+				9F128C071AA1ADAF00FE845B /* rtGetInf.c in Sources */,
+				9F128C091AA1ADAF00FE845B /* sign.c in Sources */,
+				9F128C041AA1ADAF00FE845B /* getPulseTemporal.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +559,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
@@ -495,7 +593,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos8.1;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -512,7 +610,7 @@
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyHeartRate;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -531,7 +629,7 @@
 				INFOPLIST_FILE = "MyHeartRate/MyHeartRate-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyHeartRate;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -554,7 +652,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MyHeartRateTests/MyHeartRateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyHeartRateTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -572,7 +670,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyHeartRate/MyHeartRate-Prefix.pch";
 				INFOPLIST_FILE = "MyHeartRateTests/MyHeartRateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyHeartRateTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -59,6 +59,9 @@
     [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
     progressLabel.text=[NSString stringWithFormat:@"0 %%"];
     pulseLabel.text=[NSString stringWithFormat:@""];
+    [pulseLabel setOpaque:NO];
+    pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
+
 
 }
 
@@ -73,7 +76,9 @@
     nCompPulse =0;
     progressValue = 0.0f;
     pulseLabel.text=[NSString stringWithFormat:@"--"];
-    
+    [pulseLabel setOpaque:NO];
+
+    pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
     // Session
     captureSession = [AVCaptureSession new];
     [captureSession setSessionPreset:AVCaptureSessionPreset352x288];

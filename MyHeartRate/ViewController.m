@@ -12,10 +12,12 @@
 
 @interface ViewController ()
 
+
 @end
 
 @implementation ViewController
-
+//@synthesize startaAppButton;
+//@synthesize tutorialButton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];

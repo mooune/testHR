@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qnn-7p-53X">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="7iv-mv-Ppb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Er-6h-xYM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TM-kA-hzq">
-                                <rect key="frame" x="0.0" y="518" width="110" height="30"/>
+                                <rect key="frame" x="0.0" y="518" width="165" height="30"/>
                                 <state key="normal" title="Tutorial">
                                     <color key="titleColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +64,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XtV-bI-b3H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IYL-Fb-dxI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-Hf-bu2">
@@ -104,32 +105,13 @@
                         <viewControllerLayoutGuide type="bottom" id="KUw-tB-mfp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YdS-cn-MJ8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newInterface.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-em-dNB">
-                                <rect key="frame" x="0.0" y="25" width="320" height="543"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-xD-eSN" customClass="GraphView">
                                 <rect key="frame" x="0.0" y="101" width="320" height="174"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Computing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-QG-eHc">
-                                <rect key="frame" x="118" y="382" width="84" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-Ad-WAS">
-                                <rect key="frame" x="271" y="442" width="33" height="30"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopRecording:" destination="07D-4t-dBl" eventType="touchUpInside" id="VZZ-WY-4sK"/>
-                                </connections>
-                            </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-LD-0si">
                                 <rect key="frame" x="-3" y="0.0" width="320" height="50"/>
                             </adBannerView>
@@ -139,8 +121,8 @@
                                 <color key="textColor" red="1" green="0.1302743676" blue="0.2053488591" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-Ku-U6D">
-                                <rect key="frame" x="0.0" y="442" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-Ku-U6D">
+                                <rect key="frame" x="0.0" y="629" width="100" height="30"/>
                                 <state key="normal" title="Restart">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,8 +141,36 @@
                                 <rect key="frame" x="180" y="314" width="88" height="2"/>
                                 <color key="progressTintColor" red="1" green="0.24132940789999999" blue="0.097541540740000002" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="143" text="Computing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGp-QG-eHc">
+                                <rect key="frame" x="114" y="523" width="150" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="B0x-FQ-1aW"/>
+                                    <constraint firstAttribute="width" constant="150" id="qd4-MJ-3Sy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.031407828282828287" green="0.031407828282828287" blue="0.031407828282828287" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-Ad-WAS">
+                                <rect key="frame" x="308.5" y="629" width="33" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecording:" destination="07D-4t-dBl" eventType="touchUpInside" id="VZZ-WY-4sK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5ma-Ad-WAS" secondAttribute="centerY" constant="23" id="DRn-Ff-df1"/>
+                            <constraint firstAttribute="bottom" secondItem="tGp-QG-eHc" secondAttribute="centerY" constant="72.5" id="Kvg-4E-655"/>
+                            <constraint firstAttribute="leading" secondItem="LE7-Ku-U6D" secondAttribute="centerX" constant="-50" id="lgy-Rp-jh5"/>
+                            <constraint firstAttribute="bottom" secondItem="LE7-Ku-U6D" secondAttribute="centerY" constant="23" id="pkw-ed-Qh8"/>
+                            <constraint firstAttribute="centerX" secondItem="tGp-QG-eHc" secondAttribute="centerX" constant="-0.5" id="zJ1-2z-Srt"/>
+                            <constraint firstAttribute="trailing" secondItem="5ma-Ad-WAS" secondAttribute="centerX" constant="50" id="zmY-5P-dnZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mi2-Cu-SKO"/>
                     <connections>
@@ -174,15 +184,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUd-O1-zoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="1047"/>
+            <point key="canvasLocation" x="298" y="1005"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="newInterface.png" width="640" height="1136"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina47"/>
     </simulatedMetricsContainer>
 </document>

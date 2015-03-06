@@ -12,7 +12,12 @@
 #import "PageContentViewController.h"
 
 @interface ViewController : UIViewController <UIPageViewControllerDataSource>
+
 - (IBAction)startWalktrough:(id)sender;
+
+//@property (weak, nonatomic) IBOutlet UIButton *startaAppButton;
+//@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
+
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;

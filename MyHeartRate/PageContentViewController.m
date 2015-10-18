@@ -27,7 +27,9 @@
 {
     [super viewDidLoad];
     
-    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    //self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    
+    self.backgroundImageView.image = [UIImage imageNamed:@"page1.png"];
     self.titleLabel.text = self.titleText;
     
 }

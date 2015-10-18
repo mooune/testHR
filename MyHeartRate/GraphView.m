@@ -52,7 +52,7 @@
  for (NSUInteger counter = 0; counter < 128; ++counter) {
  // UIView referential has the Y axis going down, so we need to draw upside-down.
 
- value = scaledDatas[(index + counter) % 128] /2;
+ value = -1 * scaledDatas[(index + counter) % 128] /2;
      
  if (counter > 0) {
  CGContextAddLineToPoint(context, bounds.origin.x + (float)counter / (float)(128 - 1) * bounds.size.width, bounds.origin.y + bounds.size.height / 2 + value * bounds.size.height / 2);

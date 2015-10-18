@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Stop"; ObjectID = "5ma-Ad-WAS"; */
+"5ma-Ad-WAS.normalTitle" = "Stop";
+
+/* Class = "UILabel"; text = "Progress"; ObjectID = "C3x-Gg-vqh"; */
+"C3x-Gg-vqh.text" = "Progress";
+
+/* Class = "UIButton"; normalTitle = "Restart"; ObjectID = "LE7-Ku-U6D"; */
+"LE7-Ku-U6D.normalTitle" = "Restart";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "Oey-o9-WYN"; */
+"Oey-o9-WYN.normalTitle" = "Start";
+
+/* Class = "UITextView"; text = "Put your finger on the camera and the torch simultaneously"; ObjectID = "fNc-xf-pEa"; */
+"fNc-xf-pEa.text" = "Put your finger on the camera and the torch simultaneously";
+
+/* Class = "UIViewController"; title = "landing"; ObjectID = "qnn-7p-53X"; */
+"qnn-7p-53X.title" = "landing";
+
+/* Class = "UILabel"; text = "Computing"; ObjectID = "tGp-QG-eHc"; */
+"tGp-QG-eHc.text" = "Computing";
+
+/* Class = "UILabel"; text = "Heart Rate Calculator"; ObjectID = "uae-Hh-cW9"; */
+"uae-Hh-cW9.text" = "Heart Rate Calculator";

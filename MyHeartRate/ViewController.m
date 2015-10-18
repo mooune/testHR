@@ -18,14 +18,22 @@
 @implementation ViewController
 //@synthesize startaAppButton;
 //@synthesize tutorialButton;
+@synthesize tutorialView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Create the data model
+    
+    tutorialView.text=NSLocalizedString(@"it_worked", nil);
+    // ! page view controller has been deleted. Commenting this part
+    /*
+    
+    // Create the data model
     // pageX.png reprents the page displayed in the tutorial section
     _pageTitles = @[@"", @"", @"", @""]; // page title can be set up here
+    
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
+
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -40,7 +48,7 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
+    */
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +56,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (IBAction)startWalktrough:(id)sender {
 }
 
@@ -66,7 +74,10 @@
     
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    pageContentViewController.imageFile = self.pageImages[index];
+   // pageContentViewController.imageFile = self.pageImages[index];
+    
+    
+//    pageContentViewController.imageFile = [UIImage imageNamed:self.pageImages[index]];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
     
@@ -111,5 +122,5 @@
 {
     return 0;
 }
-
+*/
 @end

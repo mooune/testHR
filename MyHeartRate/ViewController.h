@@ -9,18 +9,18 @@
 //  This ViewController is the tutorial appearing at the begining
 //
 #import <UIKit/UIKit.h>
-#import "PageContentViewController.h"
+//#import "PageContentViewController.h"
 
-@interface ViewController : UIViewController <UIPageViewControllerDataSource>
+@interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *tutorialView;
 
-- (IBAction)startWalktrough:(id)sender;
+//- (IBAction)startWalktrough:(id)sender;
 
 //@property (weak, nonatomic) IBOutlet UIButton *startaAppButton;
 //@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
 
-
-@property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageTitles;
-@property (strong, nonatomic) NSArray *pageImages;
+//@property (strong, nonatomic) UIPageViewController *pageViewController;
+//@property (strong, nonatomic) NSArray *pageTitles;
+//@property (strong, nonatomic) NSArray *pageImages;
 
 @end

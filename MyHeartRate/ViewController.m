@@ -18,15 +18,17 @@
 @implementation ViewController
 //@synthesize startaAppButton;
 //@synthesize tutorialButton;
-@synthesize tutorialView;
+@synthesize TipTextView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    TipTextView.text = NSLocalizedString(@"TipTextViewText", nil);
     
-    tutorialView.text=NSLocalizedString(@"it_worked", nil);
     // ! page view controller has been deleted. Commenting this part
     /*
-    
+    tutorialView.text = NSLocalizedString(@"it_worked", nil);
+
     // Create the data model
     // pageX.png reprents the page displayed in the tutorial section
     _pageTitles = @[@"", @"", @"", @""]; // page title can be set up here

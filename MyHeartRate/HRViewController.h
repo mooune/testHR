@@ -20,9 +20,10 @@
 #import <Accelerate/Accelerate.h>
 #import "HRViewController.h"
 #import "GraphView.h"
+#import <iAd/iAd.h>
 
 
-@interface HRViewController : UIViewController {
+@interface HRViewController : UIViewController <ADBannerViewDelegate> {
     
     double buffer[160]; //buffer contains more element to have a good signal after low pass filter
     double scaledBuffer[128];  // buffer to store the value
@@ -30,23 +31,25 @@
     int indexB;
     int bufferCompPulse[200];
     int nCompPulse;
+    
 }
+@property int pulseDisplayed;
+@property (nonatomic, strong) AVCaptureSession *captureSession;
+@property (nonatomic, strong) AVCaptureVideoDataOutput *dataOutput;
+@property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
+@property (nonatomic) int nFramesW;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
-
 @property (strong, nonatomic) IBOutlet UILabel *pulseLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
-
 @property (nonatomic) float progressValue;
-
 @property (nonatomic, retain) IBOutlet GraphView *graphView;
 
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
 -(void)increaseProgressValue;
 -(void)addToCompPulseBuffer:(int)x :(int)indexBuffer;
+
 @end

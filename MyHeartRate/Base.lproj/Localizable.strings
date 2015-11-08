@@ -5,5 +5,7 @@
   Created by Alexandre Poisson on 25/04/2015.
   Copyright (c) 2015 Alexandre Poisson. All rights reserved.
 */
-"it_worked" = "Put your finger on the camera and the torch simultaneously";
 
+"TipTextViewText" = "Put your finger on the camera and the torch simultaneously";
+"Put Finger" = "Put Finger";
+"Don't move your Finger" = "Don't move your Finger";

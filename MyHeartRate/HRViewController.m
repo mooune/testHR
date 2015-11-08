@@ -1,5 +1,5 @@
 //
-//  HRViewController.h
+//  HRViewController.m
 //
 //  Created by Alexandre Poisson on 1st june 2014
 //  Edited on 28/02/2015
@@ -23,23 +23,16 @@
 #import "myPolyDetrend_terminate.h"
 #import "getPulseTemporal_initialize.h"
 #import "getPulseTemporal_terminate.h"
+#import <iAd/iAd.h>
 
-@interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
-@property (nonatomic, strong) AVCaptureSession *captureSession;
-@property (nonatomic, strong) AVCaptureVideoDataOutput *dataOutput;
-@property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
-@property (nonatomic) int nFramesW;
-//@property int pulseComp;
-@property int pulseDisplayed;
-
-@end
+//@interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate, ADBannerViewDelegate>
+//@end
 
 
 @implementation HRViewController
 
 
-//@synthesize pulseComp;
 @synthesize pulseDisplayed;
 @synthesize captureSession;
 @synthesize dataOutput;
@@ -47,37 +40,71 @@
 @synthesize pulseLabel;
 @synthesize graphView;
 @synthesize progressView;
-@synthesize progressLabel;
-
-@synthesize progressValue;
-
+//@synthesize progressLabel;
+//@synthesize progressValue;
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
-    progressLabel.text=[NSString stringWithFormat:@"0 %%"];
-    pulseLabel.text=[NSString stringWithFormat:@""];
-    [pulseLabel setOpaque:NO];
-    pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
+}
 
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 1.0;
+    }];
+}
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    return YES;
+}
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+    [self newEstimationSession];
 
 }
 
 
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+}
 
--(void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+
+- (void)viewDidLoad
+{
+    NSLog(@" Hr View did Load");
+
+    [super viewDidLoad];
+    [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
+    self.progressLabel.text=[NSString stringWithFormat:@"0 %%"];
+    self.pulseLabel.text=[NSString stringWithFormat:@""];
+    [self.pulseLabel setOpaque:NO];
+    self.pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
+
+
+    // Make self the delegate of the ad banner.
+    self.adBanner.delegate = self;
+    
+    // Initially hide the ad banner.
+    self.adBanner.alpha = 0.0;
+    
+}
+
+-(void)newEstimationSession
+{
     
     indexB = 0;
     nFramesW = 160;
     pulseDisplayed = 0;
     nCompPulse =0;
-    progressValue = 0.0f;
+    self.progressValue = 0.0f;
     pulseLabel.text=[NSString stringWithFormat:@"--"];
     [pulseLabel setOpaque:NO];
-
+    
     pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
     // Session
     captureSession = [AVCaptureSession new];
@@ -86,6 +113,7 @@
     // Capture device
     AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error;
+    
     // Device input
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
     [HRViewController setTorchMode:AVCaptureTorchModeOn forDevice:inputDevice];
@@ -112,7 +140,17 @@
     [dataOutput setSampleBufferDelegate:self queue:queue];
     
     [captureSession startRunning];
+
     
+}
+
+
+-(void) viewWillAppear:(BOOL)animated {
+    NSLog(@" Hr View will appear");
+
+    
+    [super viewWillAppear:animated];
+    [self newEstimationSession];
 }
 
 
@@ -151,7 +189,6 @@
     buffer[nFramesW-1] = sumY;
     
     
-    
     // release
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     
@@ -176,17 +213,17 @@
         //Todo: find a better alternative
         if (sumY < 50000)
         {
-            pulseLabel.text=[NSString stringWithFormat:@"Put Finger"];
+            pulseLabel.text = NSLocalizedString(@"Put Finger", nil);
         }
         
         else {
-            pulseLabel.text=[NSString stringWithFormat:@"Keep your Finger"];
+            pulseLabel.text = NSLocalizedString(@"Don't move your Finger", nil);
 
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(detrendBuffer,30.00);
             getPulseTemporal_terminate();
             
-            if (pulseComp > 30 && pulseComp < 200 && progressValue < 1)      // getPulse return 0 when the pulse is not computed
+            if (pulseComp > 30 && pulseComp < 200 && self.progressValue < 1)      // getPulse return 0 when the pulse is not computed
             {
                 
                 pulseDisplayed = pulseComp ;
@@ -196,7 +233,7 @@
                 // pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
                 // NSLog(@" pulseDisplayed %i",pulseComp);
                 [self addToCompPulseBuffer:pulseComp :nCompPulse];
-                nCompPulse = nCompPulse+1;
+                nCompPulse = nCompPulse + 1;
                 [self increaseProgressValue];
             }
             else
@@ -223,11 +260,10 @@
 - (void) increaseProgressValue
 {
     
-    progressValue = progressValue + 0.005;
-    
-    progressView.progress = progressValue;
-    progressLabel.text=[NSString stringWithFormat:@"%.f %%",100*progressValue];
-    if (progressValue >= 1.0)
+    self.progressValue = self.progressValue + 0.005;
+    self.progressView.progress = self.progressValue;
+    self.progressLabel.text=[NSString stringWithFormat:@"%.f %%",100*self.progressValue];
+    if (self.progressValue >= 1.0)
         
     {
         int somme;
@@ -249,23 +285,29 @@
 }
 
 - (void) viewDidUnload {
+    NSLog(@" Hr View Did Unload");
+
     [super viewDidUnload];
     self.pulseLabel= nil;
     self.graphView = nil;
     [captureSession stopRunning];
-    self.dataOutput=nil;
-    self.captureSession=nil;
+    self.dataOutput = nil;
+    self.captureSession = nil;
     //   [captureSession release];
     
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
+    NSLog(@" Hr View will disappear");
+
     [super viewWillDisappear:animated];
+/*
     self.pulseLabel= nil;
     self.graphView = nil;
     [captureSession stopRunning];
-    self.dataOutput=nil;
-    self.captureSession=nil;
+    self.dataOutput = nil;
+    self.captureSession = nil;
+   */
 }
 
 - (void)dealloc {
@@ -366,14 +408,15 @@
 
 - (IBAction)startRecording:(id)sender {
     
-    [self viewWillAppear:NO];
+    [self viewWillAppear : NO];
     
 }
 
 - (IBAction)stopRecording:(id)sender {
     
-    self.dataOutput=nil;
-    self.captureSession=nil;
+    self.dataOutput = nil;
+    self.captureSession = nil;
+    
     
 }
 @end

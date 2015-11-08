@@ -12,7 +12,7 @@
 //#import "PageContentViewController.h"
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *tutorialView;
+//@property (weak, nonatomic) IBOutlet UITextView *tutorialView;
 
 //- (IBAction)startWalktrough:(id)sender;
 
@@ -22,5 +22,6 @@
 //@property (strong, nonatomic) UIPageViewController *pageViewController;
 //@property (strong, nonatomic) NSArray *pageTitles;
 //@property (strong, nonatomic) NSArray *pageImages;
+@property (weak, nonatomic) IBOutlet UITextView *TipTextView;
 
 @end

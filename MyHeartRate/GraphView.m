@@ -23,7 +23,7 @@
 
 -(void)addToPulseBuffer:(int)x :(int)indexBuffer
 {
-    pulseBuffer[indexBuffer] =x;
+    pulseBuffer[indexBuffer] = x;
    // NSLog(@" this is a new entry to pulse Buffer %i at index %i",pulseBuffer[indexBuffer],indexBuffer);
 }
 

@@ -6,6 +6,6 @@
   Copyright (c) 2015 Alexandre Poisson. All rights reserved.
 */
 
-"TipTextViewText" = "Put your finger on the camera and the torch simultaneously";
+"TipTextViewText" = "Put your finger simultaneously on the camera AND the torch. Don't press your finger heavily !";
 "Put Finger" = "Put Finger";
 "Don't move your Finger" = "Don't move your Finger";

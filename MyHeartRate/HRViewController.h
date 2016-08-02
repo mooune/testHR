@@ -1,14 +1,14 @@
 //
 //  HRViewController.h
 //
+//
 //  Created by Alexandre Poisson on 1st june 2014
-//  Edited on 28/02/2015
+//  Edited on 10/10/2015
 //  Copyright (c) 2015, Alexandre Poisson
 //
-//  This view controller can be considered as the main controller
-//  It creates the capture session
-//  send buffer to being displayed
-//  ...
+//
+//  This ViewController is the tutorial appearing at the begining
+//
 
 
 
@@ -22,14 +22,15 @@
 #import "GraphView.h"
 #import <iAd/iAd.h>
 
+#define BUFFERCOMPPULSE 100
 
-@interface HRViewController : UIViewController <ADBannerViewDelegate> {
+@interface HRViewController : UIViewController <ADBannerViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     
     double buffer[160]; //buffer contains more element to have a good signal after low pass filter
     double scaledBuffer[128];  // buffer to store the value
     double detrendBuffer[128]; // buffer to store the values after the removal of the polynomial trend
     int indexB;
-    int bufferCompPulse[200];
+    int bufferCompPulse[BUFFERCOMPPULSE];
     int nCompPulse;
     
 }
@@ -46,6 +47,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (nonatomic) float progressValue;
 @property (nonatomic, retain) IBOutlet GraphView *graphView;
+@property (weak, nonatomic) IBOutlet UITextField *LiveInstruction;
 
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;

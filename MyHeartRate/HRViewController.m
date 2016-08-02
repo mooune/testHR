@@ -26,12 +26,7 @@
 #import <iAd/iAd.h>
 
 
-//@interface HRViewController () <AVCaptureVideoDataOutputSampleBufferDelegate, ADBannerViewDelegate>
-//@end
-
-
 @implementation HRViewController
-
 
 @synthesize pulseDisplayed;
 @synthesize captureSession;
@@ -41,15 +36,16 @@
 @synthesize graphView;
 @synthesize progressView;
 //@synthesize progressLabel;
-//@synthesize progressValue;
+@synthesize progressValue;
+@synthesize LiveInstruction;
 
 
 -(void)bannerViewWillLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner will load ad.");
+    //NSLog(@"Ad Banner will load ad.");
 }
 
 -(void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner did load ad.");
+    //NSLog(@"Ad Banner did load ad.");
     // Show the ad banner.
     [UIView animateWithDuration:0.5 animations:^{
         self.adBanner.alpha = 1.0;
@@ -57,26 +53,26 @@
 }
 
 -(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
-    NSLog(@"Ad Banner action is about to begin.");
+    //NSLog(@"Ad Banner action is about to begin.");
     
     return YES;
 }
 
 -(void)bannerViewActionDidFinish:(ADBannerView *)banner{
-    NSLog(@"Ad Banner action did finish");
+    // NSLog(@"Ad Banner action did finish");
     [self newEstimationSession];
 
 }
 
 
 -(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+   // NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
 }
 
 
 - (void)viewDidLoad
 {
-    NSLog(@" Hr View did Load");
+ //   NSLog(@" Hr View did Load");
 
     [super viewDidLoad];
     [self.progressView setTransform:CGAffineTransformMakeScale(1.0, 8.0)];
@@ -84,7 +80,6 @@
     self.pulseLabel.text=[NSString stringWithFormat:@""];
     [self.pulseLabel setOpaque:NO];
     self.pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
-
 
     // Make self the delegate of the ad banner.
     self.adBanner.delegate = self;
@@ -94,6 +89,16 @@
     
 }
 
+
+
+
+-(void) viewWillAppear:(BOOL)animated {
+    NSLog(@" Hr View will appear");
+    [super viewWillAppear:animated];
+    [self newEstimationSession];
+}
+
+
 -(void)newEstimationSession
 {
     
@@ -101,11 +106,14 @@
     nFramesW = 160;
     pulseDisplayed = 0;
     nCompPulse =0;
-    self.progressValue = 0.0f;
+    progressValue = 0.0f;
     pulseLabel.text=[NSString stringWithFormat:@"--"];
+    
+    
     [pulseLabel setOpaque:NO];
     
     pulseLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"coeurCropS.png"]];
+   // pulseLabel.alpha = 0;
     // Session
     captureSession = [AVCaptureSession new];
     [captureSession setSessionPreset:AVCaptureSessionPreset352x288];
@@ -136,35 +144,30 @@
     [captureSession commitConfiguration];
     
     dispatch_queue_t queue = dispatch_queue_create("VideoQueue", DISPATCH_QUEUE_SERIAL);
-    
     [dataOutput setSampleBufferDelegate:self queue:queue];
-    
     [captureSession startRunning];
-
     
 }
-
-
--(void) viewWillAppear:(BOOL)animated {
-    NSLog(@" Hr View will appear");
-
-    
-    [super viewWillAppear:animated];
-    [self newEstimationSession];
-}
-
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CVPixelBufferLockBaseAddress(imageBuffer, 0);
     
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+  //  CVPixelBufferLockBaseAddress(imageBuffer, 1);
+
     size_t width = CVPixelBufferGetWidthOfPlane(imageBuffer, 0);
     size_t height = CVPixelBufferGetHeightOfPlane(imageBuffer, 0);
     
     uint8_t *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
-    
-    double sumY = 0 ;
+ //   uint8_t *CbCrAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 1);
+    double sumY = 0;
+ //   double sumCb = 0;
+ //   double sumCr = 0;
+ //   uint8_t counter = 0;
+ //   uint8_t Rvalue;
+ //   uint8_t Gvalue;
+ //   uint8_t Bvalue;
     
     // we only capture a section of the Buffer to save time
     
@@ -173,11 +176,29 @@
         for (uint x = round(width*1/3); x < round(width*2/3); x += 2)
         {
             sumY += *baseAddress;
+        /*
+            sumCb += CbCrAddress[0] - 128;
+            sumCr += CbCrAddress[1] - 128;
             baseAddress += 1;
-            
+            CbCrAddress += 1;
+            counter +=1;
+        */
         }
     }
+    /*
+    sumY = sumY / counter;
+    sumCb = sumCb / counter;
+    sumCr = sumCr / counter;
+    
+    Rvalue = (int) (sumY + 45 * sumCb / 32);
+    Gvalue = (int) (sumY - (11 * sumCb + 23 * sumCr) / 32);
+    Bvalue = (int) (sumY + 113 * sumCb / 64);
+
+    */
+    
     // NSLog(@" sumY %f",sumY);  // NSLog output that is usefull to print sumY values in the console
+    //NSLog(@"%f;%i;%i;%i",sumY, Rvalue, Gvalue, Bvalue);  // NSLog output that is usefull to print sumY values in the console
+
     // values can then be imported in MATLAB to test the algorithm
     
     
@@ -191,12 +212,10 @@
     
     // release
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+   // CVPixelBufferUnlockBaseAddress(imageBuffer, 1);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        //   [graphView addX:sumY];
-        //   pulseDisplayed = 0;
-        
-        
+
         scaledCenteredFiltered_initialize();
         scaledCenteredFiltered(buffer, scaledBuffer);
         scaledCenteredFiltered_terminate();
@@ -213,11 +232,11 @@
         //Todo: find a better alternative
         if (sumY < 50000)
         {
-            pulseLabel.text = NSLocalizedString(@"Put Finger", nil);
+            LiveInstruction.text = NSLocalizedString(@"Put Finger", nil);
         }
         
         else {
-            pulseLabel.text = NSLocalizedString(@"Don't move your Finger", nil);
+            LiveInstruction.text = NSLocalizedString(@"Don't move your Finger", nil);
 
             getPulseTemporal_initialize();
             int pulseComp = getPulseTemporal(detrendBuffer,30.00);
@@ -229,10 +248,17 @@
                 pulseDisplayed = pulseComp ;
                 [graphView addToPulseBuffer:pulseComp :graphView.indexB];
                 
-                graphView.indexB = graphView.indexB +1;
+                graphView.indexB = graphView.indexB + 1;
                 // pulseLabel.text=[NSString stringWithFormat:@"%i",pulseComp];
                 // NSLog(@" pulseDisplayed %i",pulseComp);
                 [self addToCompPulseBuffer:pulseComp :nCompPulse];
+                pulseLabel.text=[NSString stringWithFormat:@"%.f %%",100 * self.progressValue];
+               
+                // pulseLabel.alpha = self.progressValue;
+
+                [pulseLabel setFont:[UIFont fontWithName:@"ArialMT" size:10]];
+                
+                
                 nCompPulse = nCompPulse + 1;
                 [self increaseProgressValue];
             }
@@ -245,14 +271,13 @@
         }
         
         // NSLog(@" pulseDisplayed %i",pulseDisplayed);
-        //
         
     });
 }
 
 -(void)addToCompPulseBuffer:(int)x :(int)indexBuffer
 {
-    bufferCompPulse[indexBuffer] =x;
+    bufferCompPulse[indexBuffer] = x;
     // NSLog(@" this is a new entry to pulse Buffer %i at index %i",pulseBuffer[indexBuffer],indexBuffer);
 }
 
@@ -260,21 +285,26 @@
 - (void) increaseProgressValue
 {
     
-    self.progressValue = self.progressValue + 0.005;
+    self.progressValue = self.progressValue + (float)1 / BUFFERCOMPPULSE;
+    
     self.progressView.progress = self.progressValue;
-    self.progressLabel.text=[NSString stringWithFormat:@"%.f %%",100*self.progressValue];
+    self.progressLabel.text=[NSString stringWithFormat:@"%.f %%",100 * self.progressValue];
     if (self.progressValue >= 1.0)
         
     {
+        self.progressLabel.text=[NSString stringWithFormat:@"%d %%",100];
+
         int somme;
         somme = 0;
-        for (int count = 0; count<199; count++)
+        for (int count = 0; count<BUFFERCOMPPULSE-1; count++)
         {
             somme = somme + bufferCompPulse[count];
             
         }
-        somme = somme / 200;
+        somme = somme / BUFFERCOMPPULSE;
         pulseLabel.text=[NSString stringWithFormat:@"%i bpm",somme];
+        [pulseLabel setFont:[UIFont fontWithName:@"ArialMT" size:15]];
+
         [captureSession stopRunning];
         
         //   pulseLabel.text=[NSString stringWithFormat:@"Finish"];
@@ -409,6 +439,9 @@
 - (IBAction)startRecording:(id)sender {
     
     [self viewWillAppear : NO];
+    self.progressLabel.text=[NSString stringWithFormat:@"%d %%",0];
+    self.progressValue = 0;
+    self.progressView.progress = 0;
     
 }
 
